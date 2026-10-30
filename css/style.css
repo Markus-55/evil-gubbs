@@ -1,3 +1,8 @@
+
+/* ============================= */
+/* GENERAL CONTROLS               */
+/* ============================= */
+
 .controls {
     display: flex;
     justify-content: center;
@@ -9,6 +14,322 @@
     padding: 12px 25px;
     cursor: pointer;
 }
+
 .hidden {
     display: none;
+}
+
+
+/* ============================= */
+/* HORROR GLITCH EFFECT           */
+/* ============================= */
+
+body.glitch-active {
+    animation: horror-glitch 0.8s steps(1, end);
+    overflow-x: hidden;
+}
+
+@keyframes horror-glitch {
+    0% {
+        transform: translate(0);
+        filter: none;
+    }
+
+    5% {
+        transform: translate(-12px, 6px) skewX(8deg);
+        filter: invert(1) contrast(300%);
+    }
+
+    10% {
+        transform: translate(15px, -8px) skewX(-12deg);
+        filter: hue-rotate(180deg) saturate(500%);
+    }
+
+    15% {
+        transform: translate(-8px, -12px);
+        filter: contrast(400%) brightness(2);
+    }
+
+    20% {
+        transform: translate(10px, 10px) scale(1.02);
+        filter: invert(1);
+    }
+
+    25% {
+        transform: translate(0);
+        filter: none;
+    }
+
+    30% {
+        transform: translate(-18px, 3px) skewY(5deg);
+        filter: hue-rotate(90deg) contrast(300%);
+    }
+
+    35% {
+        transform: translate(18px, -5px);
+        filter: invert(1) saturate(500%);
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 1;
+        transform: translate(-10px, 8px);
+        filter: brightness(3) contrast(500%);
+    }
+
+    50% {
+        transform: translate(10px, -8px) scale(1.03);
+        filter: hue-rotate(270deg);
+    }
+
+    60% {
+        transform: translate(-15px, 0);
+        filter: invert(1) contrast(400%);
+    }
+
+    70% {
+        transform: translate(15px, 5px) skewX(-10deg);
+        filter: hue-rotate(180deg);
+    }
+
+    80% {
+        transform: translate(-5px, -10px);
+        filter: saturate(600%);
+    }
+
+    90% {
+        transform: translate(5px, 5px);
+        filter: contrast(300%);
+    }
+
+    100% {
+        transform: translate(0);
+        filter: none;
+        opacity: 1;
+    }
+}
+
+
+/* Red horror overlay */
+
+body.glitch-active::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        rgba(255, 0, 0, 0.15) 2px,
+        transparent 4px
+    );
+
+    animation: horror-overlay 0.8s steps(2, end);
+}
+
+@keyframes horror-overlay {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    20%, 35%, 60% {
+        opacity: 1;
+        background-color: rgba(255, 0, 0, 0.15);
+    }
+
+    40%, 45% {
+        opacity: 0;
+    }
+
+    70%, 85% {
+        opacity: 0.8;
+        background-color: rgba(120, 0, 0, 0.4);
+    }
+}
+
+
+/* ============================= */
+/* YOUTUBE PLAYER                 */
+/* ============================= */
+
+#playerContainer {
+    position: relative;
+}
+
+#playerContainer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
+
+
+/* ============================= */
+/* THE ENTITY                     */
+/* ============================= */
+
+.entity {
+    position: fixed;
+
+    width: min(65vw, 550px);
+    height: min(85vh, 850px);
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) scale(1);
+
+    z-index: 5;
+    opacity: 0;
+
+    pointer-events: none;
+    overflow: visible;
+
+    --entity-scale: 1;
+
+    transition: opacity 0.15s;
+}
+
+/* Entity image */
+
+.entity-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        brightness(0.45)
+        contrast(1.8)
+        drop-shadow(0 0 25px darkred);
+
+    animation: entity-image-distortion 4s infinite;
+}
+
+/* Entity appearance */
+
+.entity.visible {
+    opacity: 1;
+
+    animation:
+        entity-appear 0.5s ease-out,
+        entity-flicker 3s infinite;
+}
+
+@keyframes entity-appear {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(var(--entity-scale));
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(var(--entity-scale));
+    }
+}
+
+/* Random flickering */
+
+@keyframes entity-flicker {
+    0%, 85%, 88%, 100% {
+        opacity: 1;
+    }
+
+    86%, 87% {
+        opacity: 0.15;
+    }
+}
+
+/* Image distortion */
+
+@keyframes entity-image-distortion {
+    0%, 90%, 100% {
+        filter: brightness(0.45) contrast(1.8);
+    }
+
+    92% {
+        filter: brightness(1.5) contrast(3) hue-rotate(90deg);
+    }
+
+    94% {
+        filter: brightness(0.2) contrast(4) invert(1);
+    }
+
+    96% {
+        filter: brightness(0.7) contrast(2);
+    }
+}
+
+
+/* ============================= */
+/* ENTITY MESSAGE                  */
+/* ============================= */
+
+.entity-message {
+    position: fixed;
+
+    z-index: 10000;
+
+    top: 15%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: darkred;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: monospace;
+
+    text-shadow:
+        0 0 10px red,
+        0 0 25px darkred;
+
+    opacity: 0;
+    pointer-events: none;
+
+    text-align: center;
+    width: 90%;
+}
+
+.entity-message.visible {
+    opacity: 1;
+    animation: message-glitch 0.2s infinite;
+}
+
+@keyframes message-glitch {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    25% {
+        transform: translateX(-48%);
+        text-shadow: 3px 0 red, -3px 0 blue;
+    }
+
+    50% {
+        transform: translateX(-52%);
+    }
+
+    75% {
+        transform: translateX(-49%);
+        text-shadow: -3px 0 red, 3px 0 blue;
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.entity.visible {
+    opacity: 1 !important;
+    z-index: 20;
 }
