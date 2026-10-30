@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Horror Player</title>
@@ -6,11 +6,20 @@
 </head>
 
 <body>
-    <div id="playerContainer" class="hidden">
-    <div id="player"></div>
+
+    <!-- The Entity -->
+    <div id="entity" class="entity">
+    <img src="../image/entity.png" alt="" class="entity-image">
 </div>
+
+<div id="entityMessage" class="entity-message"></div>
+
+    <!-- YouTube player -->
+    <div id="playerContainer" class="hidden">
+        <div id="player"></div>
     </div>
 
+    <!-- Controls -->
     <div class="controls">
         <button id="playButton">Play</button>
         <button id="pauseButton">Pause</button>
@@ -19,5 +28,6 @@
     </div>
 
     <script src="../JS/videoController.js"></script>
+
 </body>
 </html>
