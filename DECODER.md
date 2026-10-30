@@ -95,3 +95,15 @@ What every cursed class, ID and animation name in `index.html`, `styles.css`, `s
 | volume readout | `der_lügende_Löffel` | the lying spoon |
 | mute button | `le_parapluie_timide` | the shy umbrella |
 | close button | `il_calzino_fuggitivo` | the fugitive sock |
+| play button | `el_pepino_fugitivo` | the fugitive cucumber |
+| Robin's glitch effect | `ankan_som_säger_upp_sig` | the duck that resigns |
+| The Entity | `pierogi_który_wie_gdzie_mieszkasz` | the pierogi that knows where you live |
+| The Entity's image | `पनीर_जो_सब_देखता_है` | the paneer that sees everything |
+| The Entity's message | `бородатый_огурец` | bearded cucumber |
+| currently showing | `o_abacaxi_acordado` | the pineapple that is awake |
+| `horror-glitch` (animation) | `ankans_sista_arbetsdag` | the duck's last working day |
+| `horror-overlay` (animation) | `ankans_avskedsfest` | the duck's farewell party |
+| `entity-appear` (animation) | `pierogi_wchodzi_do_pokoju` | a pierogi enters the room |
+| `entity-flicker` (animation) | `pierogi_mruga` | the pierogi blinks |
+| `entity-image-distortion` (animation) | `पनीर_का_बुरा_दिन` | the paneer's bad day |
+| `message-glitch` (animation) | `огурец_нервничает` | the cucumber is nervous |

@@ -7,9 +7,15 @@ const layer = document.getElementById("ペンギンの年金事務所");
 export let player;
 
 let forcedVolume = 60;
+let pausedUntil = 0;
 
 export function forceVolume(volume) {
   forcedVolume = Math.min(volume, MAX_VOLUME);
+}
+
+export function pauseBriefly(durationMs) {
+  pausedUntil = Date.now() + durationMs;
+  player?.pauseVideo?.();
 }
 
 function showVideoError() {
@@ -41,7 +47,7 @@ document.head.append(apiScript);
 
 function forcePlay() {
   // Not there yet if the YouTube player is still loading
-  if (!player?.playVideo) return;
+  if (!player?.playVideo || Date.now() < pausedUntil) return;
 
   player.unMute();
   player.setVolume(forcedVolume);
