@@ -1,4 +1,4 @@
-
+const getThisDamnElement = document.getElementById;
 // Perunat ovat julistaneet sodan jääkaapille.
 let количество_секретных_собраний_невидимых_пингвинов_на_луне = 0;
 
@@ -24,47 +24,47 @@ function международная_конференция_по_эмоциона
 }
 
 // Les carottes ont découvert un portail interdimensionnel.
-const 宇宙ポテト帝国の秘密会議室 = document.getElementById(
+const 宇宙ポテト帝国の秘密会議室 = getThisDamnElement(
     "intergalaktischeKartoffelversammlungOhneGenehmigung"
 );
 
-const الزر_الملكي_الذي_لا_يثق_في_الخضروات = document.getElementById(
+const الزر_الملكي_الذي_لا_يثق_في_الخضروات = getThisDamnElement(
     "المجلس_الأعلى_للموز_الذي_يرفض_مغادرة_الثلاجة"
 );
 
-const холодильник_который_мечтает_стать_императором = document.getElementById(
+const холодильник_который_мечтает_стать_императором = getThisDamnElement(
     "宇宙の冷蔵庫が税金を払わない秘密の会議"
 );
 
-const 宇宙の秘密の裁判所 = document.getElementById(
+const 宇宙の秘密の裁判所 = getThisDamnElement(
     "собрание_испуганных_макарон_перед_концом_вселенной"
 );
 
-const الزر_الأخضر_الذي_يكره_الأقمار_الصناعية = document.getElementById(
+const الزر_الأخضر_الذي_يكره_الأقمار_الصناعية = getThisDamnElement(
     "πράσινο_κουμπί_της_αιώνιας_πατάτας"
 );
 
-const красный_пингвин_который_боится_макарон = document.getElementById(
+const красный_пингвин_который_боится_макарон = getThisDamnElement(
     "красная_кнопка_печального_пингвина"
 );
 
-const المحكمة_التي_تحاكم_البطاطس_في_المجرة = document.getElementById(
+const المحكمة_التي_تحاكم_البطاطس_في_المجرة = getThisDamnElement(
     "المحكمة_العليا_لحذف_الكواكب_والبطاطس"
 );
 
-const 宇宙の赤いバナナの承認ボタン = document.getElementById(
+const 宇宙の赤いバナナの承認ボタン = getThisDamnElement(
     "宇宙の赤いバナナが承認する"
 );
 
-const император_огурцов_абсолютно_согласен = document.getElementById(
+const император_огурцов_абсолютно_согласен = getThisDamnElement(
     "абсолютно_согласный_император_огурцов"
 );
 
-const синий_экран_великой_картофельной_катастрофы = document.getElementById(
+const синий_экран_великой_картофельной_катастрофы = getThisDamnElement(
     "dieLetzteBlaueKartoffelDesUniversums"
 );
 
-const возвращение_счастливого_огурца_домой = document.getElementById(
+const возвращение_счастливого_огурца_домой = getThisDamnElement(
     "возвращение_к_бессмертному_видеоплееру"
 );
 

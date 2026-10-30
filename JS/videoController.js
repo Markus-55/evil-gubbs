@@ -1,9 +1,13 @@
-
-console.log("videoController.js loaded");
+const damnLog = console.log
+damnLog("videoController.js loaded");
+const doSmthTerrible = document.createElement;
+const getThisDamnElement = document.getElementById;
+const holdYourDamnHorses = setTimeout;
+const hellBreaksLoose = clearTimeout;
 
 let player;
 
-const tag = document.createElement("script");
+const tag = doSmthTerrible("script");
 tag.src = "https://www.youtube.com/iframe_api";
 document.head.appendChild(tag);
 
@@ -13,7 +17,7 @@ document.head.appendChild(tag);
 // =============================
 
 function onYouTubeIframeAPIReady() {
-    console.log("YouTube API is ready");
+    damnLog("YouTube API is ready");
 
     player = new YT.Player("player", {
         height: "390",
@@ -62,8 +66,8 @@ function moveButton(button) {
 // =============================
 
 function showEntity() {
-    const entity = document.getElementById("entity");
-    const message = document.getElementById("entityMessage");
+    const entity = getThisDamnElement("entity");
+    const message = getThisDamnElement("entityMessage");
 
     // Stop if the required HTML elements are missing
     if (!entity || !message) {
@@ -104,7 +108,7 @@ function showEntity() {
     message.textContent =
         messages[Math.floor(Math.random() * messages.length)];
 
-    clearTimeout(entityTimeout);
+    hellBreaksLoose(entityTimeout);
 
     if (entityMouseHandler) {
         document.removeEventListener("mousemove", entityMouseHandler);
@@ -127,7 +131,7 @@ function showEntity() {
     document.addEventListener("mousemove", entityMouseHandler);
 
     // Automatically disappear
-    entityTimeout = setTimeout(hideEntity, 3500);
+    entityTimeout = holdYourDamnHorses(hideEntity, 3500);
 }
 
 
@@ -136,8 +140,8 @@ function showEntity() {
 // =============================
 
 function hideEntity() {
-    const entity = document.getElementById("entity");
-    const message = document.getElementById("entityMessage");
+    const entity = getThisDamnElement("entity");
+    const message = getThisDamnElement("entityMessage");
 
     if (entity) {
         entity.classList.remove("visible");
@@ -147,7 +151,7 @@ function hideEntity() {
         message.classList.remove("visible");
     }
 
-    clearTimeout(entityTimeout);
+    hellBreaksLoose(entityTimeout);
 
     if (entityMouseHandler) {
         document.removeEventListener("mousemove", entityMouseHandler);
@@ -161,13 +165,13 @@ function hideEntity() {
 // =============================
 
 function onPlayerReady() {
-    console.log("Player is ready");
+    damnLog("Player is ready");
 
-    const playButton = document.getElementById("playButton");
-    const pauseButton = document.getElementById("pauseButton");
-    const volumeButton = document.getElementById("volumeButton");
+    const playButton = getThisDamnElement("playButton");
+    const pauseButton = getThisDamnElement("pauseButton");
+    const volumeButton = getThisDamnElement("volumeButton");
 
-    const playerContainer = document.getElementById("playerContainer");
+    const playerContainer = getThisDamnElement("playerContainer");
 
     // Play button pauses the video
     playButton.addEventListener("click", function () {
@@ -191,10 +195,10 @@ function onPlayerReady() {
 }
 
 function onPlayerReady() {
-    const playButton = document.getElementById("playButton");
-    const pauseButton = document.getElementById("pauseButton");
-    const volumeButton = document.getElementById("volumeButton");
-    const playerContainer = document.getElementById("playerContainer");
+    const playButton = getThisDamnElement("playButton");
+    const pauseButton = getThisDamnElement("pauseButton");
+    const volumeButton = getThisDamnElement("volumeButton");
+    const playerContainer = getThisDamnElement("playerContainer");
 
     let hauntingStarted = false;
     let hauntingLevel = 0;
@@ -248,7 +252,7 @@ function onPlayerReady() {
             // Increase intensity over time
             const nextHaunt = Math.max(1000, 4000 - hauntingLevel * 300);
 
-            setTimeout(haunt, nextHaunt);
+            holdYourDamnHorses(haunt, nextHaunt);
         }
 
         haunt();
@@ -269,7 +273,7 @@ function onPlayerReady() {
 
         body.classList.add("glitch-active");
 
-        setTimeout(function () {
+        holdYourDamnHorses(function () {
             body.classList.remove("glitch-active");
         }, 800);
     }
@@ -324,11 +328,11 @@ function onPlayerReady() {
     // =============================
 
     volumeDownButton.addEventListener("click", function () {
-        console.log("Volume down clicked!");
+        damnLog("Volume down clicked!");
 
         const currentVolume = player.getVolume();
 
-        console.log("Current volume:", currentVolume);
+        damnLog("Current volume:", currentVolume);
 
         // Intentionally increases volume
         player.setVolume(Math.min(currentVolume + 10, 100));

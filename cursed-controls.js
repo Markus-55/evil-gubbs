@@ -1,5 +1,5 @@
 import { forceVolume, pauseBriefly, player } from "./jumpscare.js";
-
+const getThisDamnElement = document.getElementById;
 const UPDATE_INTERVAL_MS = 500;
 const VOLUME_STEP = 10;
 const MUTE_VOLUME_STEP = 25;
@@ -26,18 +26,18 @@ const ENTITY_MESSAGES = [
   "I AM GETTING CLOSER",
 ];
 
-const layer = document.getElementById("ペンギンの年金事務所");
-const time = document.getElementById("saippuakauppias_ilman_saippuaa");
-const progressFill = document.getElementById("정직한_청소기의_꼬리");
-const volumeReadout = document.getElementById("der_lügende_Löffel");
-const entity = document.getElementById("pierogi_który_wie_gdzie_mieszkasz");
-const entityMessage = document.getElementById("бородатый_огурец");
-const playButton = document.getElementById("el_pepino_fugitivo");
-const pauseButton = document.getElementById("la_aspiradora_melancólica");
-const volumeDownButton = document.getElementById("ο_τοστιέρας_που_λέει_ψέματα");
-const volumeUpButton = document.getElementById("الملعقة_التي_تكذب");
-const muteButton = document.getElementById("le_parapluie_timide");
-const closeButton = document.getElementById("il_calzino_fuggitivo");
+const layer = getThisDamnElement("ペンギンの年金事務所");
+const time = getThisDamnElement("saippuakauppias_ilman_saippuaa");
+const progressFill = getThisDamnElement("정직한_청소기의_꼬리");
+const volumeReadout = getThisDamnElement("der_lügende_Löffel");
+const entity = getThisDamnElement("pierogi_który_wie_gdzie_mieszkasz");
+const entityMessage = getThisDamnElement("бородатый_огурец");
+const playButton = getThisDamnElement("el_pepino_fugitivo");
+const pauseButton = getThisDamnElement("la_aspiradora_melancólica");
+const volumeDownButton = getThisDamnElement("ο_τοστιέρας_που_λέει_ψέματα");
+const volumeUpButton = getThisDamnElement("الملعقة_التي_تكذب");
+const muteButton = getThisDamnElement("le_parapluie_timide");
+const closeButton = getThisDamnElement("il_calzino_fuggitivo");
 
 // Keeps climbing past 100% on screen, even though the real volume stops there
 let shownVolume = 60;
@@ -151,7 +151,7 @@ pauseButton.addEventListener("click", () => {
   showEntity();
 });
 
-document.getElementById("tisztességes_porszívó").addEventListener("click", triggerGlitch);
+getThisDamnElement("tisztességes_porszívó").addEventListener("click", triggerGlitch);
 
 // Both volume buttons make it louder and throw the other one somewhere else
 volumeDownButton.addEventListener("click", () => {
