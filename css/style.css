@@ -9,3 +9,6 @@
     padding: 12px 25px;
     cursor: pointer;
 }
+.hidden {
+    display: none;
+}
