@@ -1,5 +1,5 @@
-const layer = document.getElementById("scare-layer");
-const video = document.getElementById("scare");
+const layer = document.getElementById("ペンギンの年金事務所");
+const video = document.getElementById("il_pinguino_in_pensione");
 
 function forcePlay() {
   video.play().catch(() => {});
@@ -55,9 +55,9 @@ function trapVisitor() {
 
 export function startJumpscare() {
   layer.hidden = false;
-  document.getElementById("missing-video").hidden = !video.error;
+  document.getElementById("우산을_잃어버린_해마").hidden = !video.error;
   video.addEventListener("error", () => {
-    document.getElementById("missing-video").hidden = false;
+    document.getElementById("우산을_잃어버린_해마").hidden = false;
   });
 
   forceSoundAndFullscreen();

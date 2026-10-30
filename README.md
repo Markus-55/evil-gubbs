@@ -17,18 +17,20 @@ Do your work on a branch off `chas-hack`, and pull often. Several of us will be 
 
 ## How it works
 
-1. The Anmäl button goes fullscreen and opens the [Lovable game](https://ghostly-trap-mansion.lovable.app/) in an iframe. The visitor never leaves our page.
+1. The front page button goes fullscreen and opens the [Lovable game](https://ghostly-trap-mansion.lovable.app/) in an iframe. The visitor never leaves our page.
 2. When the player dies, the game shows "YOU DIED" and 5 seconds later runs `window.parent.postMessage("jumpscare", "*")`. The game is edited in Lovable, not in this repo.
 3. Our page receives that message and starts the video with sound.
 
-We stay on one page because browsers only allow sound after a click on the same page, and the Anmäl click counts. If the game redirected to a separate page, the video would probably start silently. Fullscreen starts at the Anmäl click because browsers refuse it unless there was a click or key press in the last few seconds.
+We stay on one page because browsers only allow sound after a click on the same page, and that button click counts. If the game redirected to a separate page, the video would probably start silently. Fullscreen starts at that click because browsers refuse it unless there was a click or key press in the last few seconds.
+
+All class, ID and animation names on the page are deliberately cursed. [DECODER.md](DECODER.md) lists what each one really is, so check it before you add or change anything.
 
 | File | What it does |
 |---|---|
-| `index.html` | All the markup. The video screen is `#scare-layer`, near the bottom. |
+| `index.html` | All the markup. The video screen is `#ペンギンの年金事務所`, near the bottom. |
 | `script.js` | Front page behaviour, plus opening the game and listening for its message. |
 | `jumpscare.js` | Starts the video and stops the visitor from pausing, muting or going back. |
-| `styles.css` | All the styles. The video screen is under "Game and jumpscare overlays". |
+| `styles.css` | All the styles. Search for `ペンギンの年金事務所` to find the video screen. |
 | `public/` | Files served as they are. The video goes here. |
 
 ## Test the jumpscare without playing the game
@@ -59,7 +61,7 @@ Put the file at exactly `public/jumpscare.mp4` and commit it. Until it's there, 
 
 The video currently has no controls at all. Do this once, before the first button:
 
-1. Delete `cursor: none;` from `.scare-layer` in `styles.css`. Otherwise nobody can see the mouse pointer.
+1. Delete `cursor: none;` from `.ペンギンの年金事務所` in `styles.css`. Otherwise nobody can see the mouse pointer.
 2. Create `cursed-controls.js` and add this line to the top of `script.js`:
 
    ```js
@@ -68,7 +70,7 @@ The video currently has no controls at all. Do this once, before the first butto
 
 Then each button needs three things.
 
-**Markup**, in `index.html`, inside `#scare-layer` and after the `missing-video` paragraph. If it comes earlier, the message covers it.
+**Markup**, in `index.html`, inside `#ペンギンの年金事務所` and after the `우산을_잃어버린_해마` paragraph. If it comes earlier, the message covers it.
 
 ```html
 <button class="cursed-button" id="stop-button" type="button">Stäng av</button>
@@ -87,7 +89,7 @@ Then each button needs three things.
 **Behaviour**, in `cursed-controls.js`. This example restarts the video when you try to stop it:
 
 ```js
-const video = document.getElementById("scare");
+const video = document.getElementById("il_pinguino_in_pensione");
 
 document.getElementById("stop-button").addEventListener("click", () => {
   video.currentTime = 0;
