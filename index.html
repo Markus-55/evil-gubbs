@@ -132,12 +132,7 @@
             <p class="intro">
               Detta är ett Hackathon för Chas Academy elever där vi samlas för att lära, ha kul och utmana oss själva tillsammans!
             </p>
-            <a
-              class="cta hw-title"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSepAsz0EGJbvipC0Phc5-y5oVOJxNbwR2o4jUbVSPZKo9h6Ng/viewform"
-            >
+            <a class="cta hw-title" id="cta" href="https://ghostly-trap-mansion.lovable.app/">
               Anmäl dig innan det är försent
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
@@ -466,6 +461,24 @@
     </div>
 
     <div class="toast-layer" id="toast-layer" aria-live="polite"></div>
+
+    <div class="game-layer" id="game-layer" hidden>
+      <iframe class="game-frame" id="game-frame" title="Spel" allow="autoplay; fullscreen"></iframe>
+    </div>
+
+    <div class="scare-layer" id="scare-layer" hidden>
+      <video
+        class="scare"
+        id="scare"
+        src="/jumpscare.mp4"
+        preload="auto"
+        loop
+        playsinline
+        disablepictureinpicture
+        disableremoteplayback
+      ></video>
+      <p class="missing-video" id="missing-video" hidden>Lägg videon i public/jumpscare.mp4</p>
+    </div>
 
     <!-- Shapes reused by the bats and ghosts above -->
     <svg class="sprites" aria-hidden="true">
