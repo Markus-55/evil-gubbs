@@ -555,19 +555,32 @@ h1.النعامة_التي_تحب_الاجتماعات {
 
 .ペンギンの年金事務所 {
   z-index: 80;
+  overflow: hidden;
   cursor: none;
 }
 
-.الثلاجة_التي_تكتب_الشعر,
-.il_pinguino_in_pensione {
+.ペンギンの年金事務所[hidden] {
+  z-index: -1;
+  display: block;
+  visibility: hidden;
+}
+
+.الثلاجة_التي_تكتب_الشعر {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-.il_pinguino_in_pensione {
-  object-fit: cover;
+#il_pinguino_in_pensione {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100vw, 177.78vh);
+  height: max(100vh, 56.25vw);
+  border: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .우산을_잃어버린_해마 {
