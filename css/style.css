@@ -12,3 +12,142 @@
 .hidden {
     display: none;
 }
+
+/* HORROR GLITCH EFFECT */
+
+body.glitch-active {
+    animation: horror-glitch 0.8s steps(1, end);
+    overflow-x: hidden;
+}
+
+/* Main screen distortion */
+@keyframes horror-glitch {
+    0% {
+        transform: translate(0);
+        filter: none;
+    }
+
+    5% {
+        transform: translate(-12px, 6px) skewX(8deg);
+        filter: invert(1) contrast(300%);
+    }
+
+    10% {
+        transform: translate(15px, -8px) skewX(-12deg);
+        filter: hue-rotate(180deg) saturate(500%);
+    }
+
+    15% {
+        transform: translate(-8px, -12px);
+        filter: contrast(400%) brightness(2);
+    }
+
+    20% {
+        transform: translate(10px, 10px) scale(1.02);
+        filter: invert(1);
+    }
+
+    25% {
+        transform: translate(0);
+        filter: none;
+    }
+
+    30% {
+        transform: translate(-18px, 3px) skewY(5deg);
+        filter: hue-rotate(90deg) contrast(300%);
+    }
+
+    35% {
+        transform: translate(18px, -5px);
+        filter: invert(1) saturate(500%);
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 1;
+        transform: translate(-10px, 8px);
+        filter: brightness(3) contrast(500%);
+    }
+
+    50% {
+        transform: translate(10px, -8px) scale(1.03);
+        filter: hue-rotate(270deg);
+    }
+
+    60% {
+        transform: translate(-15px, 0);
+        filter: invert(1) contrast(400%);
+    }
+
+    70% {
+        transform: translate(15px, 5px) skewX(-10deg);
+        filter: hue-rotate(180deg);
+    }
+
+    80% {
+        transform: translate(-5px, -10px);
+        filter: saturate(600%);
+    }
+
+    90% {
+        transform: translate(5px, 5px);
+        filter: contrast(300%);
+    }
+
+    100% {
+        transform: translate(0);
+        filter: none;
+        opacity: 1;
+    }
+}
+
+/* Red horror overlay */
+body.glitch-active::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        rgba(255, 0, 0, 0.15) 2px,
+        transparent 4px
+    );
+
+    animation: horror-overlay 0.8s steps(2, end);
+}
+
+@keyframes horror-overlay {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    20%, 35%, 60% {
+        opacity: 1;
+        background-color: rgba(255, 0, 0, 0.15);
+    }
+
+    40%, 45% {
+        opacity: 0;
+    }
+
+    70%, 85% {
+        opacity: 0.8;
+        background-color: rgba(120, 0, 0, 0.4);
+    }
+}
+#playerContainer {
+    position: relative;
+}
+
+#playerContainer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
