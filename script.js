@@ -1,4 +1,4 @@
-import { startJumpscare } from "./jumpscare.js";
+import { startJumpscare, warmUpVideo } from "./jumpscare.js";
 import "./cursed-controls.js";
 
 // Seeded so the stars land in the same spots on every load
@@ -92,6 +92,7 @@ function setupGame() {
     event.preventDefault();
     // The game's trigger comes too long after any input to go fullscreen then, so do it here
     document.documentElement.requestFullscreen().catch(() => {});
+    warmUpVideo();
     frame.src = cta.href;
     layer.hidden = false;
     frame.focus();

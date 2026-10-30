@@ -26,6 +26,13 @@ function showVideoError() {
   document.getElementById("우산을_잃어버린_해마").hidden = false;
 }
 
+// YouTube shows its own controls for a few seconds when playback starts, and we can't
+// style them, so start early while the video is still hidden and let them fade away
+export function warmUpVideo() {
+  player?.mute?.();
+  player?.playVideo?.();
+}
+
 // YouTube player initialization.
 window.onYouTubeIframeAPIReady = () => {
   player = new YT.Player("il_pinguino_in_pensione", {
