@@ -1,3 +1,4 @@
+
 const VIDEO_ID = "wJeekjGw070";
 const FORCE_PLAY_INTERVAL_MS = 500;
 const MAX_VOLUME = 100;
@@ -8,6 +9,9 @@ export let player;
 
 let forcedVolume = 60;
 let pausedUntil = 0;
+let isTrapping = false;
+let isRecovering = false;
+let forcePlayInterval;
 
 export function forceVolume(volume) {
   forcedVolume = Math.min(volume, MAX_VOLUME);
@@ -22,10 +26,11 @@ function showVideoError() {
   document.getElementById("우산을_잃어버린_해마").hidden = false;
 }
 
-// Loaded with the page so the video is ready to start the moment the jumpscare fires
+// YouTube player initialization.
 window.onYouTubeIframeAPIReady = () => {
   player = new YT.Player("il_pinguino_in_pensione", {
     videoId: VIDEO_ID,
+
     playerVars: {
       controls: 0,
       disablekb: 1,
@@ -36,7 +41,10 @@ window.onYouTubeIframeAPIReady = () => {
       playsinline: 1,
       rel: 0,
     },
-    events: { onError: showVideoError },
+
+    events: {
+      onError: showVideoError
+    },
   });
 };
 
@@ -46,58 +54,145 @@ apiScript.addEventListener("error", showVideoError);
 document.head.append(apiScript);
 
 function forcePlay() {
-  // Not there yet if the YouTube player is still loading
-  if (!player?.playVideo || Date.now() < pausedUntil) return;
+  if (
+    isRecovering ||
+    !player?.playVideo ||
+    Date.now() < pausedUntil
+  ) {
+    return;
+  }
 
   player.unMute();
   player.setVolume(forcedVolume);
 
   const state = player.getPlayerState();
-  if (state !== YT.PlayerState.PLAYING && state !== YT.PlayerState.BUFFERING) {
+
+  if (
+    state !== YT.PlayerState.PLAYING &&
+    state !== YT.PlayerState.BUFFERING
+  ) {
     player.playVideo();
   }
 }
 
 function forceSoundAndFullscreen() {
+  if (isRecovering) return;
+
   forcePlay();
 
   const fullscreen = document.fullscreenElement
     ? Promise.resolve()
     : document.documentElement.requestFullscreen();
 
-  // Tapping Esc stays trapped, but holding it still exits fullscreen
-  fullscreen.then(() => navigator.keyboard?.lock?.(["Escape"])).catch(() => {});
+  fullscreen
+    .then(() => navigator.keyboard?.lock?.(["Escape"]))
+    .catch(() => {});
 }
 
 function blockEvent(event) {
+  if (isRecovering) return;
+
   event.preventDefault();
   event.stopPropagation();
 }
 
-function trapVisitor() {
-  // Fullscreen is refused if the last click or key press was too long ago, so every new one tries again
-  window.addEventListener("pointerdown", forceSoundAndFullscreen, true);
-  window.addEventListener("keydown", (event) => {
-    blockEvent(event);
-    forceSoundAndFullscreen();
-  }, true);
-  window.addEventListener("contextmenu", blockEvent, true);
+function onKeyDown(event) {
+  if (isRecovering) return;
 
-  // The YouTube player has no pause or volume events we can use, so keep undoing any change
-  setInterval(forcePlay, FORCE_PLAY_INTERVAL_MS);
+  blockEvent(event);
+  forceSoundAndFullscreen();
+}
 
-  // Back button stays on this page
+function onPopState() {
+  if (isRecovering) return;
+
   history.pushState(null, "", location.href);
-  window.addEventListener("popstate", () => {
-    history.pushState(null, "", location.href);
-    forcePlay();
-  });
+  forcePlay();
+}
 
-  // Asks "leave this page?" on close and reload
-  window.addEventListener("beforeunload", blockEvent);
+function trapVisitor() {
+  if (isTrapping) return;
+
+  isTrapping = true;
+
+  window.addEventListener(
+    "pointerdown",
+    forceSoundAndFullscreen,
+    true
+  );
+
+  window.addEventListener(
+    "keydown",
+    onKeyDown,
+    true
+  );
+
+  window.addEventListener(
+    "contextmenu",
+    blockEvent,
+    true
+  );
+
+  forcePlayInterval = setInterval(
+    forcePlay,
+    FORCE_PLAY_INTERVAL_MS
+  );
+
+  history.pushState(null, "", location.href);
+
+  window.addEventListener(
+    "popstate",
+    onPopState
+  );
+
+  window.addEventListener(
+    "beforeunload",
+    blockEvent
+  );
+}
+
+export function stopJumpscare() {
+  isRecovering = true;
+
+  window.removeEventListener(
+    "pointerdown",
+    forceSoundAndFullscreen,
+    true
+  );
+
+  window.removeEventListener(
+    "keydown",
+    onKeyDown,
+    true
+  );
+
+  window.removeEventListener(
+    "contextmenu",
+    blockEvent,
+    true
+  );
+
+  window.removeEventListener(
+    "popstate",
+    onPopState
+  );
+
+  window.removeEventListener(
+    "beforeunload",
+    blockEvent
+  );
+
+  clearInterval(forcePlayInterval);
+
+  navigator.keyboard?.unlock?.();
+  player?.pauseVideo?.();
+
+  isTrapping = false;
 }
 
 export function startJumpscare() {
+  if (isRecovering) return;
+
   layer.hidden = false;
   forceSoundAndFullscreen();
   trapVisitor();

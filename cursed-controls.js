@@ -1,4 +1,12 @@
-import { forceVolume, pauseBriefly, player } from "./jumpscare.js";
+
+import {
+  forceVolume,
+  pauseBriefly,
+  player,
+  stopJumpscare
+} from "./jumpscare.js";
+
+import { initializeCursedClose } from "./closeButton/cursedClose.js";
 
 const UPDATE_INTERVAL_MS = 500;
 const VOLUME_STEP = 10;
@@ -39,11 +47,11 @@ const volumeUpButton = document.getElementById("الملعقة_التي_تكذب
 const muteButton = document.getElementById("le_parapluie_timide");
 const closeButton = document.getElementById("il_calzino_fuggitivo");
 
-// Keeps climbing past 100% on screen, even though the real volume stops there
 let shownVolume = 60;
 let entityAppearances = 0;
 let entityTimeout;
 let hauntingLevel = 0;
+let crashIsActive = false;
 
 function raiseVolume(step) {
   shownVolume += step;
@@ -53,20 +61,28 @@ function raiseVolume(step) {
 
 function moveButton(button) {
   button.style.position = "fixed";
-  button.style.left = `${Math.random() * (window.innerWidth - button.offsetWidth)}px`;
-  button.style.top = `${Math.random() * (window.innerHeight - button.offsetHeight)}px`;
+  button.style.left =
+    `${Math.random() * Math.max(0, window.innerWidth - button.offsetWidth)}px`;
+  button.style.top =
+    `${Math.random() * Math.max(0, window.innerHeight - button.offsetHeight)}px`;
 }
 
 function triggerGlitch() {
+  if (crashIsActive) return;
+
   layer.classList.remove(GLITCH_CLASS);
-  // Force the browser to restart the animation
   void layer.offsetWidth;
   layer.classList.add(GLITCH_CLASS);
-  setTimeout(() => layer.classList.remove(GLITCH_CLASS), GLITCH_DURATION_MS);
+
+  setTimeout(() => {
+    layer.classList.remove(GLITCH_CLASS);
+  }, GLITCH_DURATION_MS);
 }
 
 function maybeGlitch() {
-  if (Math.random() < GLITCH_CHANCE) triggerGlitch();
+  if (Math.random() < GLITCH_CHANCE) {
+    triggerGlitch();
+  }
 }
 
 function hideEntity() {
@@ -77,19 +93,27 @@ function hideEntity() {
 }
 
 function showEntity() {
+  if (crashIsActive) return;
+
   hideEntity();
   entityAppearances++;
 
-  // Grows with each appearance, alternating sides and creeping towards the middle
   const isLeft = entityAppearances % 2 !== 0;
   const distance = Math.min(entityAppearances * 5, 37);
-  entity.style.setProperty("--entity-scale", Math.min(1 + entityAppearances * 0.15, 2.5));
+
+  entity.style.setProperty(
+    "--entity-scale",
+    Math.min(1 + entityAppearances * 0.15, 2.5)
+  );
+
   entity.style.left = `${isLeft ? 5 + distance : 95 - distance}%`;
   entity.style.top = "50%";
-  entityMessage.textContent = ENTITY_MESSAGES[Math.floor(Math.random() * ENTITY_MESSAGES.length)];
 
-  // Force the browser to restart the animation
+  entityMessage.textContent =
+    ENTITY_MESSAGES[Math.floor(Math.random() * ENTITY_MESSAGES.length)];
+
   void entity.offsetWidth;
+
   entity.classList.add(VISIBLE_CLASS);
   entityMessage.classList.add(VISIBLE_CLASS);
 
@@ -99,10 +123,12 @@ function showEntity() {
 
 const SABOTAGE = [
   triggerGlitch,
+
   () => {
     moveButton(volumeUpButton);
     moveButton(volumeDownButton);
   },
+
   () => {
     moveButton(playButton);
     triggerGlitch();
@@ -110,8 +136,9 @@ const SABOTAGE = [
 ];
 
 function haunt() {
-  if (!layer.hidden) {
+  if (!layer.hidden && !crashIsActive) {
     hauntingLevel++;
+
     if (Math.random() < ENTITY_CHANCE) {
       showEntity();
     } else {
@@ -119,13 +146,22 @@ function haunt() {
     }
   }
 
-  setTimeout(haunt, Math.max(FASTEST_HAUNT_MS, SLOWEST_HAUNT_MS - hauntingLevel * HAUNT_SPEEDUP_MS));
+  setTimeout(
+    haunt,
+    Math.max(
+      FASTEST_HAUNT_MS,
+      SLOWEST_HAUNT_MS - hauntingLevel * HAUNT_SPEEDUP_MS
+    )
+  );
 }
 
 function formatTime(seconds) {
   const hours = Math.floor(seconds / 3600);
-  const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-  const rest = String(Math.floor(seconds % 60)).padStart(2, "0");
+  const minutes =
+    String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+  const rest =
+    String(Math.floor(seconds % 60)).padStart(2, "0");
+
   return `${hours}:${minutes}:${rest}`;
 }
 
@@ -134,42 +170,80 @@ function updateTime() {
 
   const current = player.getCurrentTime();
   const duration = player.getDuration();
-  time.textContent = `${formatTime(current)} / ${formatTime(duration)}`;
-  progressFill.style.width = `${duration ? (current / duration) * 100 : 0}%`;
+
+  time.textContent =
+    `${formatTime(current)} / ${formatTime(duration)}`;
+
+  progressFill.style.width =
+    `${duration ? (current / duration) * 100 : 0}%`;
 }
 
-// Play pauses the video for a moment of false hope, and runs away from the mouse
-playButton.addEventListener("pointerenter", () => moveButton(playButton));
+playButton.addEventListener("pointerenter", () => {
+  moveButton(playButton);
+});
+
 playButton.addEventListener("click", () => {
   pauseBriefly(FALSE_HOPE_MS);
   setTimeout(triggerGlitch, FALSE_HOPE_MS);
 });
 
-// Pause only wakes things up
 pauseButton.addEventListener("click", () => {
   triggerGlitch();
   showEntity();
 });
 
-document.getElementById("tisztességes_porszívó").addEventListener("click", triggerGlitch);
+document
+  .getElementById("tisztességes_porszívó")
+  .addEventListener("click", triggerGlitch);
 
-// Both volume buttons make it louder and throw the other one somewhere else
 volumeDownButton.addEventListener("click", () => {
   raiseVolume(VOLUME_STEP);
   moveButton(volumeUpButton);
   maybeGlitch();
 });
+
 volumeUpButton.addEventListener("click", () => {
   raiseVolume(VOLUME_STEP);
   moveButton(volumeDownButton);
   maybeGlitch();
 });
 
-muteButton.addEventListener("pointerenter", () => moveButton(muteButton));
-muteButton.addEventListener("click", () => raiseVolume(MUTE_VOLUME_STEP));
+muteButton.addEventListener("pointerenter", () => {
+  moveButton(muteButton);
+});
 
-closeButton.addEventListener("pointerenter", () => moveButton(closeButton));
-closeButton.addEventListener("click", showEntity);
+muteButton.addEventListener("click", () => {
+  raiseVolume(MUTE_VOLUME_STEP);
+});
+
+// Our cursed close button owns the X behavior.
+initializeCursedClose({
+  closeButton,
+  videoContainer: layer,
+  videoElement: document.getElementById("il_pinguino_in_pensione"),
+
+  onRecovery: () => {
+    crashIsActive = true;
+    hideEntity();
+    stopJumpscare();
+  },
+});
+
+// Stop haunting effects from interrupting the fake crash.
+const blueScreenObserver = new MutationObserver(() => {
+  const crashScreen = layer.querySelector(".cursed-blue-screen");
+
+  if (crashScreen && !crashScreen.hidden) {
+    crashIsActive = true;
+    hideEntity();
+  }
+});
+
+blueScreenObserver.observe(layer, {
+  subtree: true,
+  attributes: true,
+  attributeFilter: ["hidden"],
+});
 
 setInterval(updateTime, UPDATE_INTERVAL_MS);
 haunt();
