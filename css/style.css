@@ -1,4 +1,5 @@
 
+
 /* ============================= */
 /* GENERAL CONTROLS               */
 /* ============================= */
@@ -176,15 +177,15 @@ body.glitch-active::before {
 .entity {
     position: fixed;
 
-    width: min(65vw, 550px);
-    height: min(85vh, 850px);
+    width: 95vw;
+    height: 100vh;
 
     left: 50%;
     top: 50%;
 
     transform: translate(-50%, -50%) scale(1);
 
-    z-index: 5;
+    z-index: 20;
     opacity: 0;
 
     pointer-events: none;
@@ -195,6 +196,7 @@ body.glitch-active::before {
     transition: opacity 0.15s;
 }
 
+
 /* Entity image */
 
 .entity-image {
@@ -204,17 +206,18 @@ body.glitch-active::before {
     object-fit: contain;
 
     filter:
-        brightness(0.45)
+        brightness(0.65)
         contrast(1.8)
-        drop-shadow(0 0 25px darkred);
-
-    animation: entity-image-distortion 4s infinite;
+        saturate(0.7)
+        drop-shadow(0 0 35px darkred);
 }
+
 
 /* Entity appearance */
 
 .entity.visible {
-    opacity: 1;
+    opacity: 1 !important;
+    z-index: 20;
 
     animation:
         entity-appear 0.5s ease-out,
@@ -238,6 +241,7 @@ body.glitch-active::before {
     }
 }
 
+
 /* Random flickering */
 
 @keyframes entity-flicker {
@@ -250,86 +254,11 @@ body.glitch-active::before {
     }
 }
 
-/* Image distortion */
-
-@keyframes entity-image-distortion {
-    0%, 90%, 100% {
-        filter: brightness(0.45) contrast(1.8);
-    }
-
-    92% {
-        filter: brightness(1.5) contrast(3) hue-rotate(90deg);
-    }
-
-    94% {
-        filter: brightness(0.2) contrast(4) invert(1);
-    }
-
-    96% {
-        filter: brightness(0.7) contrast(2);
-    }
-}
-
 
 /* ============================= */
-/* ENTITY MESSAGE                  */
+/* ENTITY MESSAGE                 */
 /* ============================= */
 
 .entity-message {
-    position: fixed;
-
-    z-index: 10000;
-
-    top: 15%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    color: darkred;
-    font-size: 28px;
-    font-weight: bold;
-    font-family: monospace;
-
-    text-shadow:
-        0 0 10px red,
-        0 0 25px darkred;
-
-    opacity: 0;
-    pointer-events: none;
-
-    text-align: center;
-    width: 90%;
-}
-
-.entity-message.visible {
-    opacity: 1;
-    animation: message-glitch 0.2s infinite;
-}
-
-@keyframes message-glitch {
-    0% {
-        transform: translateX(-50%);
-    }
-
-    25% {
-        transform: translateX(-48%);
-        text-shadow: 3px 0 red, -3px 0 blue;
-    }
-
-    50% {
-        transform: translateX(-52%);
-    }
-
-    75% {
-        transform: translateX(-49%);
-        text-shadow: -3px 0 red, 3px 0 blue;
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-.entity.visible {
-    opacity: 1 !important;
-    z-index: 20;
+    display: none !important;
 }
