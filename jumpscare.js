@@ -1,13 +1,58 @@
-const layer = document.getElementById("scare-layer");
-const video = document.getElementById("scare");
+const VIDEO_ID = "wJeekjGw070";
+const FORCE_PLAY_INTERVAL_MS = 500;
+const MAX_VOLUME = 100;
+
+const layer = document.getElementById("ペンギンの年金事務所");
+
+export let player;
+
+let forcedVolume = 60;
+
+export function forceVolume(volume) {
+  forcedVolume = Math.min(volume, MAX_VOLUME);
+}
+
+function showVideoError() {
+  document.getElementById("우산을_잃어버린_해마").hidden = false;
+}
+
+// Loaded with the page so the video is ready to start the moment the jumpscare fires
+window.onYouTubeIframeAPIReady = () => {
+  player = new YT.Player("il_pinguino_in_pensione", {
+    videoId: VIDEO_ID,
+    playerVars: {
+      controls: 0,
+      disablekb: 1,
+      fs: 0,
+      iv_load_policy: 3,
+      loop: 1,
+      playlist: VIDEO_ID,
+      playsinline: 1,
+      rel: 0,
+    },
+    events: { onError: showVideoError },
+  });
+};
+
+const apiScript = document.createElement("script");
+apiScript.src = "https://www.youtube.com/iframe_api";
+apiScript.addEventListener("error", showVideoError);
+document.head.append(apiScript);
 
 function forcePlay() {
-  video.play().catch(() => {});
+  // Not there yet if the YouTube player is still loading
+  if (!player?.playVideo) return;
+
+  player.unMute();
+  player.setVolume(forcedVolume);
+
+  const state = player.getPlayerState();
+  if (state !== YT.PlayerState.PLAYING && state !== YT.PlayerState.BUFFERING) {
+    player.playVideo();
+  }
 }
 
 function forceSoundAndFullscreen() {
-  video.muted = false;
-  video.volume = 1;
   forcePlay();
 
   const fullscreen = document.fullscreenElement
@@ -32,15 +77,8 @@ function trapVisitor() {
   }, true);
   window.addEventListener("contextmenu", blockEvent, true);
 
-  video.addEventListener("pause", forcePlay);
-  video.addEventListener("ended", forcePlay);
-  video.addEventListener("volumechange", () => {
-    if (video.muted || video.volume < 1) {
-      video.muted = false;
-      video.volume = 1;
-    }
-  });
-  document.addEventListener("visibilitychange", forcePlay);
+  // The YouTube player has no pause or volume events we can use, so keep undoing any change
+  setInterval(forcePlay, FORCE_PLAY_INTERVAL_MS);
 
   // Back button stays on this page
   history.pushState(null, "", location.href);
@@ -55,11 +93,6 @@ function trapVisitor() {
 
 export function startJumpscare() {
   layer.hidden = false;
-  document.getElementById("missing-video").hidden = !video.error;
-  video.addEventListener("error", () => {
-    document.getElementById("missing-video").hidden = false;
-  });
-
   forceSoundAndFullscreen();
   trapVisitor();
 }

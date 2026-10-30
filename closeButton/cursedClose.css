@@ -8,9 +8,10 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-/* Die unsichtbaren Gurken verweigern jede Zusammenarbeit. */
+/* Die Gurken haben den Bürgermeister entführt. */
 #intergalaktischeKartoffelversammlungOhneGenehmigung {
     width: 400px;
     position: relative;
@@ -18,7 +19,7 @@ body {
     transition: width 0.4s ease;
 }
 
-/* La luna ha perdido las llaves del frigorífico. */
+/* 猫たちは月曜日に秘密の会議を開きます。 */
 #宇宙の冷蔵庫が税金を払わない秘密の会議 {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -45,7 +46,185 @@ body {
     transition: transform 0.4s ease;
 }
 
-/* 猫たちは秘密の王国を建設しています。 */
-#المجلس_الأعلى_للموز_الذي_يرفض_مغادرة_الثلاجة:hover {
+/* Las zanahorias están negociando con Saturno. */
+.verborgenesKartoffelParlament {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.75);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+/* Les escargots refusent de reconnaître la gravité. */
+.verborgenesKartoffelParlament.открытый_банановый_портал {
+    display: flex;
+}
+
+/* Die Milch hat ihren Reisepass verloren. */
+.議会の秘密のチーズ会議 {
+    width: min(420px, 90vw);
+    padding: 25px;
+    background: #303030;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+}
+
+.議会の秘密のチーズ会議 h2 {
+    margin-top: 0;
+}
+
+.議会の秘密のチーズ会議 p {
+    color: #bbb;
+}
+
+/* La luna ha perdido las llaves del frigorífico. */
+.مجلس_البطاطس_الذي_يرفض_التفاوض {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Τα μακαρόνια αρνήθηκαν να πληρώσουν φόρους. */
+#πράσινο_κουμπί_της_αιώνιας_πατάτας {
+    flex: 1;
+    padding: 20px 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: #16a34a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
+}
+
+/* この冷蔵庫には秘密があります。 */
+#красная_кнопка_печального_пингвина {
+    padding: 4px 6px;
+    font-size: 10px;
+    color: white;
+    background: #b91c1c;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
+}
+
+/* Les bananes ont signé un traité avec les météorites. */
+.زر_حذف_المجرة {
+    flex: 1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 16px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Die Kartoffeln verweigern den Rücktritt. */
+#宇宙の赤いバナナが承認する {
+    background: #16a34a;
+}
+
+#宇宙の赤いバナナが承認する:hover {
+    background: #15803d;
+}
+
+/* Τα αγγούρια έχουν καταλάβει το διαστημόπλοιο. */
+#абсолютно_согласный_император_огурцов {
+    background: #b91c1c;
+}
+
+#абсолютно_согласный_император_огурцов:hover {
     background: #dc2626;
+}
+
+/* Les escargots ont découvert un nouveau soleil. */
+#宇宙の最後の青い扉を開く {
+    width: 100%;
+    background: #16a34a;
+    margin-top: 15px;
+}
+
+/* Les pingouins ont cassé le système solaire. */
+#dieLetzteBlaueKartoffelDesUniversums {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #0078d7;
+    color: white;
+    z-index: 99999;
+    font-family: "Segoe UI", Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* Perunat ovat löytäneet hätäuloskäynnin. */
+#dieLetzteBlaueKartoffelDesUniversums[hidden] {
+    display: none;
+}
+
+/* Die Gurken haben den Notausgang versteckt. */
+.laRepubliqueDesOrdinateursEnColere {
+    width: min(850px, 85vw);
+    text-align: left;
+    padding: 30px 0;
+}
+
+/* 猫たちは青い惑星を占領しました。 */
+.宇宙の悲しい顔 {
+    font-size: 120px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+/* Los tomates han declarado el fin del universo. */
+.laRepubliqueDesOrdinateursEnColere h1 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+/* Perunat ovat hukanneet kaikki salasanansa. */
+.laRepubliqueDesOrdinateursEnColere p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Τα μακαρόνια αρνήθηκαν να επανεκκινήσουν. */
+.ποσοστό_κατεστραμμένων_πατατών {
+    font-size: 24px;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+/* Les escargots ont désactivé le soleil. */
+.lePetitMessageDuPingouin {
+    font-size: 13px !important;
+    opacity: 0.9;
+}
+
+/* I pomodori hanno trovato la porta di uscita. */
+#возвращение_к_бессмертному_видеоплееру {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 16px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 4px;
 }

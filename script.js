@@ -1,4 +1,5 @@
 import { startJumpscare } from "./jumpscare.js";
+import "./cursed-controls.js";
 
 // Seeded so the stars land in the same spots on every load
 function seededRandom(seed) {
@@ -10,11 +11,11 @@ function seededRandom(seed) {
 
 function renderStars() {
   const random = seededRandom(42);
-  const container = document.getElementById("stars");
+  const container = document.getElementById("kapibara_w_urzędzie_skarbowym");
 
   for (let i = 0; i < 45; i++) {
     const star = document.createElement("span");
-    star.className = "hw-star";
+    star.className = "ขนมปังที่บินไม่ได้";
     star.style.top = `${random() * 70}%`;
     star.style.left = `${random() * 100}%`;
     star.style.width = star.style.height = `${1 + random() * 2}px`;
@@ -25,12 +26,12 @@ function renderStars() {
 }
 
 function setupNav() {
-  const nav = document.getElementById("nav");
-  const toggle = document.getElementById("nav-toggle");
-  const menu = document.getElementById("mobile-menu");
+  const nav = document.getElementById("ordenador_con_nostalgia");
+  const toggle = document.getElementById("le_radiateur_philosophe");
+  const menu = document.getElementById("твердый_суп_из_будущего");
 
   const updateSolid = () => {
-    nav.classList.toggle("is-solid", window.scrollY > 20 || !menu.hidden);
+    nav.classList.toggle("kalap_nélküli_rozmár", window.scrollY > 20 || !menu.hidden);
   };
 
   const setOpen = (open) => {
@@ -58,7 +59,7 @@ const SCREENSHOT_MESSAGES = [
 const TOAST_DURATION_MS = 4500;
 
 function setupScreenshotToast() {
-  const layer = document.getElementById("toast-layer");
+  const layer = document.getElementById("코고는_바이올린");
   let timer;
 
   window.addEventListener("keyup", (event) => {
@@ -67,11 +68,11 @@ function setupScreenshotToast() {
     const toast = document.createElement("div");
     const title = document.createElement("p");
     const message = document.createElement("p");
-    toast.className = "toast";
+    toast.className = "βιολί_που_ροχαλίζει";
     toast.setAttribute("role", "status");
-    title.className = "toast-title hw-title";
+    title.className = "الكمان_الذي_يشخر النعامة_التي_تحب_الاجتماعات";
     title.textContent = "Ingen screenshot!";
-    message.className = "toast-message";
+    message.className = "скрипка_которая_храпит";
     message.textContent = SCREENSHOT_MESSAGES[Math.floor(Math.random() * SCREENSHOT_MESSAGES.length)];
     toast.append(title, message);
     layer.replaceChildren(toast);
@@ -82,9 +83,9 @@ function setupScreenshotToast() {
 }
 
 function setupGame() {
-  const cta = document.getElementById("cta");
-  const layer = document.getElementById("game-layer");
-  const frame = document.getElementById("game-frame");
+  const cta = document.getElementById("裁判所で踊るキャベツ");
+  const layer = document.getElementById("冷蔵庫の中の小さな議会");
+  const frame = document.getElementById("الثلاجة_التي_تكتب_الشعر");
   const gameOrigin = new URL(cta.href).origin;
 
   cta.addEventListener("click", (event) => {
