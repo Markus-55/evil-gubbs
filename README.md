@@ -57,7 +57,7 @@ The video plays from YouTube. To change it, edit `VIDEO_ID` at the top of `jumps
 
 ## Adding cursed control buttons
 
-The video has a fake control bar, `.海を見たことがない掃除機`, with the logic in `cursed-controls.js`. Pause and the progress bar restart the video, both volume buttons make it louder, and mute and close run away from the mouse. The volume starts at 60% so there's room to raise it. The number on screen keeps climbing past 100%, but the real volume stops there.
+The video has a fake control bar, `.海を見たことがない掃除機`, with the logic in `cursed-controls.js`. It uses Robin's effects: Pause and the progress bar set off the glitch, both volume buttons make it louder and throw each other around, and play, mute and close run away from the mouse. The Entity keeps appearing on its own, faster and faster. The volume starts at 60% so there's room to raise it. The number on screen keeps climbing past 100%, but the real volume stops there.
 
 Each new button needs three things.
 
