@@ -177,27 +177,21 @@ body.glitch-active::before {
 .entity {
     position: fixed;
 
-    width: 95vw;
+    width: 100vw;
     height: 100vh;
 
     left: 50%;
     top: 50%;
 
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%);
 
     z-index: 20;
     opacity: 0;
 
     pointer-events: none;
-    overflow: visible;
 
     --entity-scale: 1;
-
-    transition: opacity 0.15s;
 }
-
-
-/* Entity image */
 
 .entity-image {
     width: 100%;
@@ -205,11 +199,7 @@ body.glitch-active::before {
 
     object-fit: contain;
 
-    filter:
-        brightness(0.65)
-        contrast(1.8)
-        saturate(0.7)
-        drop-shadow(0 0 35px darkred);
+    filter: none;
 }
 
 
