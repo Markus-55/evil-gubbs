@@ -41,15 +41,13 @@ body {
   overflow-x: hidden;
 }
 
-.sprites {
+.गोभी_का_वकील {
   position: absolute;
   width: 0;
   height: 0;
 }
 
-/* Nav */
-
-.nav {
+.ordenador_con_nostalgia {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -58,20 +56,20 @@ body {
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-.nav.is-solid {
+.ordenador_con_nostalgia.kalap_nélküli_rozmár {
   border-color: rgb(255 138 31 / 0.15);
   background: rgb(30 16 8 / 0.85);
   backdrop-filter: blur(8px);
 }
 
-.nav-bar {
+.couve_que_sabe_demais {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 4rem;
 }
 
-.nav-logo {
+.Kartoffelsteuerberater {
   flex-shrink: 0;
   padding: 0.125rem 1rem;
   border: 2px solid oklch(98.7% 0.022 95.277 / 0.8);
@@ -82,12 +80,12 @@ body {
   transition: color 0.15s, border-color 0.15s;
 }
 
-.nav-logo:hover {
+.Kartoffelsteuerberater:hover {
   border-color: var(--orange-light);
   color: var(--orange-light);
 }
 
-.nav-toggle {
+.le_radiateur_philosophe {
   display: inline-flex;
   margin-right: -0.5rem;
   padding: 0.5rem;
@@ -99,26 +97,26 @@ body {
   transition: color 0.15s, background-color 0.15s;
 }
 
-.nav-toggle:hover {
+.le_radiateur_philosophe:hover {
   background: rgb(255 255 255 / 0.1);
   color: var(--orange-light);
 }
 
-.nav-toggle svg {
+.le_radiateur_philosophe svg {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.nav-toggle .icon-close,
-.nav-toggle[aria-expanded="true"] .icon-menu {
+.le_radiateur_philosophe .傘をなくした鮭,
+.le_radiateur_philosophe[aria-expanded="true"] .laks_uten_paraply {
   display: none;
 }
 
-.nav-toggle[aria-expanded="true"] .icon-close {
+.le_radiateur_philosophe[aria-expanded="true"] .傘をなくした鮭 {
   display: block;
 }
 
-.nav-links {
+.der_beleidigte_Toaster {
   display: none;
   align-items: center;
   justify-content: center;
@@ -127,13 +125,13 @@ body {
   line-height: 1.25rem;
 }
 
-.nav-links a {
+.der_beleidigte_Toaster a {
   position: relative;
   color: oklch(98.7% 0.022 95.277 / 0.9);
   transition: color 0.15s;
 }
 
-.nav-links a::after {
+.der_beleidigte_Toaster a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -144,15 +142,15 @@ body {
   transition: width 0.15s;
 }
 
-.nav-links a:hover {
+.der_beleidigte_Toaster a:hover {
   color: var(--orange-light);
 }
 
-.nav-links a:hover::after {
+.der_beleidigte_Toaster a:hover::after {
   width: 100%;
 }
 
-.mobile-menu {
+.твердый_суп_из_будущего {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -160,11 +158,11 @@ body {
   border-top: 1px solid rgb(255 138 31 / 0.15);
 }
 
-.mobile-menu[hidden] {
+.твердый_суп_из_будущего[hidden] {
   display: none;
 }
 
-.mobile-menu a {
+.твердый_суп_из_будущего a {
   display: block;
   padding: 0.75rem;
   border-radius: 0.5rem;
@@ -172,14 +170,12 @@ body {
   transition: color 0.15s, background-color 0.15s;
 }
 
-.mobile-menu a:hover {
+.твердый_суп_из_будущего a:hover {
   background: rgb(255 255 255 / 0.05);
   color: var(--orange-light);
 }
 
-/* Scene */
-
-.page {
+.la_tortue_comptable {
   display: flex;
   flex-direction: column;
   height: 100svh;
@@ -189,7 +185,7 @@ body {
   background: var(--ink);
 }
 
-.hw-sky {
+.мыслящая_табуретка {
   position: relative;
   display: flex;
   flex: 1;
@@ -200,94 +196,105 @@ body {
   background: radial-gradient(at 50% 40%, #c98a3e 0%, #8a5527 32%, #4a2a12 68%, #1e1008 100%);
 }
 
-.stars {
+.kapibara_w_urzędzie_skarbowym {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
 
-.hw-star {
+.ขนมปังที่บินไม่ได้ {
   position: absolute;
   border-radius: 50%;
   background: var(--amber-50);
-  animation: hw-twinkle 3s ease-in-out infinite;
+  animation: ปลาหมึกเล่นหมากรุก 3s ease-in-out infinite;
 }
 
-.tree {
+.pöytä_joka_muistaa_kaiken {
   position: absolute;
   top: 0;
   width: 10rem;
   pointer-events: none;
 }
 
-.tree-left {
+.الطاولة_التي_تتذكر_كل_شيء {
   left: -1.5rem;
 }
 
-.tree-right {
+.すべてを覚えている机 {
   right: -1.5rem;
   transform: scaleX(-1);
 }
 
-.bat,
-.ghost {
+.бабушкин_чайник_на_пенсии,
+.pysgodyn_yn_canu_opera {
   position: absolute;
   pointer-events: none;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
-.bat-1 {
+.おばあちゃんの左の靴下 {
   left: 6%;
   top: 24%;
   width: 3.5rem;
-  animation-name: bat-1;
+  animation-name: おばあちゃんの左の靴下_の旅;
   animation-duration: 9s;
 }
 
-.bat-2 {
+.سمكة_تدفع_الضرائب_مبكرا {
   right: 14%;
   top: 16%;
   width: 3.5rem;
-  animation-name: bat-2;
+  animation-name: سمكة_تدفع_الضرائب_مبكرا_في_رحلة;
   animation-duration: 11s;
 }
 
-.bat-3 {
+.세금을_내는_감자 {
   display: none;
   left: 42%;
   top: 30%;
   width: 2rem;
-  animation-name: bat-3;
+  animation-name: 세금을_내는_감자의_여행;
   animation-duration: 7s;
 }
 
-.ghost-1 {
+.ljósaperan_sem_hatar_mánudaga {
   display: none;
   left: 12%;
   top: 58%;
   width: 3.5rem;
-  animation-name: ghost-1;
+  animation-name: ljósaperan_á_ferðalagi;
   animation-duration: 4s;
 }
 
-.ghost-2 {
+.pazartesiden_korkan_limon {
   right: 6%;
   top: 78%;
   width: 2.5rem;
-  animation-name: ghost-2;
+  animation-name: limonun_yolculuğu;
   animation-duration: 5s;
 }
 
-.hw-flap {
+.図書館で昼寝するウナギ {
   width: 100%;
-  transform-origin: 50% 40%;
-  animation: hw-flap 0.35s ease-in-out infinite alternate;
 }
 
-/* Hero */
+.con_vịt_làm_kế_toán {
+  transform-box: view-box;
+  animation: 0.35s ease-in-out var(--flap-delay, 0s) infinite alternate;
+}
 
-.hero {
+.회계사_오리의_왼쪽_장화 {
+  transform-origin: 46px 28px;
+  animation-name: la_salchicha_izquierda;
+}
+
+.会計士のアヒルの右の長靴 {
+  transform-origin: 54px 28px;
+  animation-name: die_rechte_Wurst;
+}
+
+.η_καρέκλα_που_ξέρει_πολλά {
   position: relative;
   display: flex;
   flex: 1;
@@ -296,7 +303,7 @@ body {
   padding: 1.5rem 1rem 18vh;
 }
 
-.moon-holder {
+.سلطة_من_المستقبل {
   position: absolute;
   left: 50%;
   top: 45%;
@@ -305,17 +312,17 @@ body {
   pointer-events: none;
 }
 
-.hw-moon {
+.αγγούρι_με_γραβάτα {
   position: relative;
   width: min(96vw, 40rem);
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle at 45% 40%, #fffaf0 0%, #f6e6b8 45%, #e8c983 75%, #d4a75c 100%);
   box-shadow: 0 0 60px 20px #ffe2a08c, 0 0 160px 60px #ffb45a4d;
-  animation: moon-in 1.2s ease-in-out both, hw-glow 6s ease-in-out infinite;
+  animation: 체스_두는_오징어 1.2s ease-in-out both, केले_से_डरने_वाली_घड़ी 6s ease-in-out infinite;
 }
 
-.moon-surface {
+.未来から来た味噌汁 {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -323,7 +330,7 @@ body {
   border-radius: 50%;
 }
 
-.clouds {
+.kahvinkeitin_joka_pelkää_tiistaita {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -331,11 +338,11 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.hw-cloud {
-  animation: hw-drift 45s ease-in-out infinite alternate;
+.ankerias_kirjastossa {
+  animation: тихий_батон 45s ease-in-out infinite alternate;
 }
 
-.hero-content {
+.الكرسي_الذي_يعرف_أكثر_من_اللازم {
   position: relative;
   z-index: 10;
   display: flex;
@@ -345,14 +352,14 @@ body {
   text-align: center;
 }
 
-.hw-title {
+.النعامة_التي_تحب_الاجتماعات {
   font-family: Creepster, "Baloo 2", cursive;
   font-weight: 400;
   letter-spacing: 0.04em;
   text-shadow: 0 4px #00000026, 0 0 28px #ff962859;
 }
 
-.eyebrow {
+.szomorú_kerékpár_a_pincében {
   position: relative;
   top: -1.5rem;
   margin-bottom: 0.25rem;
@@ -362,27 +369,27 @@ body {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: #3b1d0a;
-  animation: fade-in 0.8s ease-in-out 0.3s both;
+  animation: αργή_φέτα 0.8s ease-in-out 0.3s both;
 }
 
-h1.hw-title {
+h1.النعامة_التي_تحب_الاجتماعات {
   font-size: 3.75rem;
   line-height: 1;
   color: var(--ink);
-  animation: title-in 0.9s ease-in-out both;
+  animation: inktvis_met_schulden 0.9s ease-in-out both;
 }
 
-.intro {
+.mursu_ilman_junalippua {
   max-width: min(72vw, 30rem);
   margin-top: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
   color: #2b1709;
-  animation: fade-in 0.8s ease-in-out 0.6s both;
+  animation: αργή_φέτα 0.8s ease-in-out 0.6s both;
 }
 
-.cta {
+.裁判所で踊るキャベツ {
   position: relative;
   top: 1rem;
   display: inline-flex;
@@ -397,26 +404,26 @@ h1.hw-title {
   line-height: 1.75rem;
   color: var(--ink);
   transition: color 0.15s, background-color 0.15s, transform 0.2s;
-  animation: fade-in 0.8s ease-in-out 0.8s both;
+  animation: αργή_φέτα 0.8s ease-in-out 0.8s both;
 }
 
-.cta:hover {
+.裁判所で踊るキャベツ:hover {
   background: var(--ink);
   color: var(--orange-light);
   transform: scale(1.05);
 }
 
-.cta:active {
+.裁判所で踊るキャベツ:active {
   transform: scale(0.95);
 }
 
-.cta svg {
+.裁判所で踊るキャベツ svg {
   flex-shrink: 0;
   width: 1.25rem;
   height: 1.25rem;
 }
 
-.hw-fog {
+.kenyérpirító_a_parlamentben {
   position: absolute;
   inset-inline: 0;
   bottom: 12vh;
@@ -427,7 +434,7 @@ h1.hw-title {
   pointer-events: none;
 }
 
-.graveyard {
+.ตู้เย็นที่อยากเป็นนักบิน {
   position: absolute;
   inset-inline: 0;
   bottom: 0;
@@ -438,47 +445,45 @@ h1.hw-title {
   pointer-events: none;
 }
 
-.hw-glow {
+.घड़ी_जो_केले_से_डरती_है {
   filter: drop-shadow(0 0 3px #ff8a1fe6);
 }
 
-.hw-blink {
-  animation: hw-blink 1.6s ease-in-out infinite;
+.жираф_в_налоговой {
+  animation: жираф_в_отпуске 1.6s ease-in-out infinite;
 }
 
-.hw-flicker {
-  animation: hw-flicker 5s linear infinite;
+.춤추는_냉장고 {
+  animation: 냉장고의_춤 5s linear infinite;
 }
 
-/* Footer */
-
-.footer {
+.подводная_лодка_из_творога {
   position: relative;
   padding: 0.75rem 1rem;
   background: var(--ink);
 }
 
-.footer-inner {
+.हवाई_जहाज़_में_बैठा_आलू {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  animation: fade-in 0.6s ease-in-out 0.4s both;
+  animation: αργή_φέτα 0.6s ease-in-out 0.4s both;
 }
 
-.credit {
+.πρόβατο_με_δίπλωμα_οδήγησης {
   font-size: 0.75rem;
   line-height: 1rem;
   color: oklch(96.2% 0.059 95.617 / 0.4);
 }
 
-.socials {
+.kiti_kinachojua_siri {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.socials a {
+.kiti_kinachojua_siri a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,21 +495,19 @@ h1.hw-title {
   transition: color 0.15s, background-color 0.15s, border-color 0.15s, transform 0.15s;
 }
 
-.socials a:hover {
+.kiti_kinachojua_siri a:hover {
   border-color: var(--orange-light);
   background: var(--orange);
   color: var(--ink);
   transform: scale(1.1);
 }
 
-.socials svg {
+.kiti_kinachojua_siri svg {
   width: 1.25rem;
   height: 1.25rem;
 }
 
-/* PrintScreen toast */
-
-.toast-layer {
+.코고는_바이올린 {
   position: fixed;
   inset: 0;
   z-index: 60;
@@ -515,7 +518,7 @@ h1.hw-title {
   pointer-events: none;
 }
 
-.toast {
+.βιολί_που_ροχαλίζει {
   max-width: 28rem;
   padding: 1rem 1.25rem;
   border: 1px solid rgb(255 138 31 / 0.4);
@@ -526,50 +529,48 @@ h1.hw-title {
   color: var(--amber-50);
   text-align: center;
   pointer-events: auto;
-  animation: toast-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: kałamarnica_z_długami 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.toast-title {
+.الكمان_الذي_يشخر {
   font-size: 1.5rem;
   line-height: 2rem;
   color: var(--orange);
 }
 
-.toast-message {
+.скрипка_которая_храпит {
   margin-top: 0.25rem;
 }
 
-/* Game and jumpscare overlays */
-
-.game-layer,
-.scare-layer {
+.冷蔵庫の中の小さな議会,
+.ペンギンの年金事務所 {
   position: fixed;
   inset: 0;
   background: #000;
 }
 
-.game-layer {
+.冷蔵庫の中の小さな議会 {
   z-index: 70;
 }
 
-.scare-layer {
+.ペンギンの年金事務所 {
   z-index: 80;
   cursor: none;
 }
 
-.game-frame,
-.scare {
+.الثلاجة_التي_تكتب_الشعر,
+.il_pinguino_in_pensione {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-.scare {
+.il_pinguino_in_pensione {
   object-fit: cover;
 }
 
-.missing-video {
+.우산을_잃어버린_해마 {
   position: absolute;
   inset: 0;
   display: flex;
@@ -577,192 +578,188 @@ h1.hw-title {
   justify-content: center;
 }
 
-.missing-video[hidden] {
+.우산을_잃어버린_해마[hidden] {
   display: none;
 }
 
-/* Breakpoints match the original: 40rem, 48rem, 64rem */
-
 @media (min-width: 40rem) {
-  .nav {
+  .ordenador_con_nostalgia {
     padding-inline: 1.5rem;
   }
 
-  .tree {
+  .pöytä_joka_muistaa_kaiken {
     width: 14rem;
   }
 
-  .bat-1 {
+  .おばあちゃんの左の靴下 {
     left: 8%;
     top: 38%;
     width: 5rem;
   }
 
-  .bat-2 {
+  .سمكة_تدفع_الضرائب_مبكرا {
     width: 6rem;
   }
 
-  .ghost-1 {
+  .ljósaperan_sem_hatar_mánudaga {
     display: block;
   }
 
-  .ghost-2 {
+  .pazartesiden_korkan_limon {
     right: 8%;
     top: 48%;
     width: 3.5rem;
   }
 
-  .hero {
+  .η_καρέκλα_που_ξέρει_πολλά {
     padding-bottom: 22vh;
   }
 
-  .eyebrow {
+  .szomorú_kerékpár_a_pincében {
     top: -2.5rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 
-  h1.hw-title {
+  h1.النعامة_التي_تحب_الاجتماعات {
     font-size: 6rem;
   }
 
-  .intro {
+  .mursu_ilman_junalippua {
     font-size: 1rem;
     line-height: 1.5rem;
   }
 
-  .cta {
+  .裁判所で踊るキャベツ {
     top: 2rem;
     padding-inline: 2rem;
     font-size: 1.5rem;
     line-height: 2rem;
   }
 
-  .graveyard {
+  .ตู้เย็นที่อยากเป็นนักบิน {
     height: 25.6vh;
   }
 
-  .footer {
+  .подводная_лодка_из_творога {
     padding: 1rem 1.5rem;
   }
 
-  .credit {
+  .πρόβατο_με_δίπλωμα_οδήγησης {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 }
 
 @media (min-width: 48rem) {
-  .nav-links {
+  .der_beleidigte_Toaster {
     font-size: 1rem;
     line-height: 1.5rem;
   }
 
-  .bat-3 {
+  .세금을_내는_감자 {
     display: block;
   }
 
-  .intro {
+  .mursu_ilman_junalippua {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
 
 @media (min-width: 64rem) {
-  .nav {
+  .ordenador_con_nostalgia {
     padding-inline: 2.5rem;
   }
 
-  .nav-bar {
+  .couve_que_sabe_demais {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
   }
 
-  .nav-logo {
+  .Kartoffelsteuerberater {
     justify-self: start;
   }
 
-  .nav-toggle,
-  .mobile-menu {
+  .le_radiateur_philosophe,
+  .твердый_суп_из_будущего {
     display: none;
   }
 
-  .nav-links {
+  .der_beleidigte_Toaster {
     display: flex;
   }
 
-  .tree {
+  .pöytä_joka_muistaa_kaiken {
     width: 18rem;
   }
 
-  .ghost-1 {
+  .ljósaperan_sem_hatar_mánudaga {
     width: 4rem;
   }
 
-  h1.hw-title {
+  h1.النعامة_التي_تحب_الاجتماعات {
     font-size: 8rem;
   }
 
-  .footer {
+  .подводная_лодка_из_творога {
     padding-inline: 2.5rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hw-star,
-  .bat,
-  .ghost,
-  .hw-flap,
-  .hw-moon,
-  .hw-cloud,
-  .hw-blink,
-  .hw-flicker,
-  .eyebrow,
-  h1.hw-title,
-  .intro,
-  .cta,
-  .footer-inner,
-  .toast {
+  .ขนมปังที่บินไม่ได้,
+  .бабушкин_чайник_на_пенсии,
+  .pysgodyn_yn_canu_opera,
+  .con_vịt_làm_kế_toán,
+  .αγγούρι_με_γραβάτα,
+  .ankerias_kirjastossa,
+  .жираф_в_налоговой,
+  .춤추는_냉장고,
+  .szomorú_kerékpár_a_pincében,
+  h1.النعامة_التي_تحب_الاجتماعات,
+  .mursu_ilman_junalippua,
+  .裁判所で踊るキャベツ,
+  .हवाई_जहाज़_में_बैठा_आलू,
+  .βιολί_που_ροχαλίζει {
     animation: none;
   }
 }
 
-/* Animations */
-
-@keyframes fade-in {
+@keyframes αργή_φέτα {
   from {
     opacity: 0;
   }
 }
 
-@keyframes title-in {
+@keyframes inktvis_met_schulden {
   from {
     opacity: 0;
     transform: translateY(-30px);
   }
 }
 
-@keyframes moon-in {
+@keyframes 체스_두는_오징어 {
   from {
     opacity: 0;
     transform: scale(0.9);
   }
 }
 
-@keyframes toast-in {
+@keyframes kałamarnica_z_długami {
   from {
     opacity: 0;
     transform: scale(0.8);
   }
 }
 
-@keyframes hw-glow {
+@keyframes केले_से_डरने_वाली_घड़ी {
   50% {
     box-shadow: 0 0 80px 28px #ffe2a0a6, 0 0 200px 80px #ffb45a59;
   }
 }
 
-@keyframes hw-twinkle {
+@keyframes ปลาหมึกเล่นหมากรุก {
   0%,
   100% {
     opacity: 0.2;
@@ -772,13 +769,25 @@ h1.hw-title {
   }
 }
 
-@keyframes hw-flap {
+@keyframes la_salchicha_izquierda {
+  from {
+    transform: rotate(-14deg);
+  }
   to {
-    transform: scaleY(0.45);
+    transform: rotate(22deg);
   }
 }
 
-@keyframes hw-drift {
+@keyframes die_rechte_Wurst {
+  from {
+    transform: rotate(14deg);
+  }
+  to {
+    transform: rotate(-22deg);
+  }
+}
+
+@keyframes тихий_батон {
   from {
     transform: translate(-40px);
   }
@@ -787,13 +796,13 @@ h1.hw-title {
   }
 }
 
-@keyframes hw-blink {
+@keyframes жираф_в_отпуске {
   50% {
     opacity: 0.15;
   }
 }
 
-@keyframes hw-flicker {
+@keyframes 냉장고의_춤 {
   0%,
   92%,
   96%,
@@ -805,7 +814,7 @@ h1.hw-title {
   }
 }
 
-@keyframes bat-1 {
+@keyframes おばあちゃんの左の靴下_の旅 {
   33.33% {
     transform: translate(30px, -20px);
   }
@@ -814,7 +823,7 @@ h1.hw-title {
   }
 }
 
-@keyframes bat-2 {
+@keyframes سمكة_تدفع_الضرائب_مبكرا_في_رحلة {
   33.33% {
     transform: translate(-40px, 15px);
   }
@@ -823,13 +832,13 @@ h1.hw-title {
   }
 }
 
-@keyframes bat-3 {
+@keyframes 세금을_내는_감자의_여행 {
   50% {
     transform: translate(60px, -10px);
   }
 }
 
-@keyframes ghost-1 {
+@keyframes ljósaperan_á_ferðalagi {
   0%,
   100% {
     transform: translateY(0) rotate(-4deg);
@@ -839,7 +848,7 @@ h1.hw-title {
   }
 }
 
-@keyframes ghost-2 {
+@keyframes limonun_yolculuğu {
   0%,
   100% {
     transform: translateY(0) rotate(3deg);
