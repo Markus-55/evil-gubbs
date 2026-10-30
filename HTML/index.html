@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
+<head>
+    <title>Horror Player</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
   <body>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
 
-    <div id="player"></div>
 
 <div class="controls">
     <button id="playButton">Play</button>
@@ -27,10 +32,11 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
-          playerVars: {
-            'playsinline': 1
-          },
+          videoId: 'wJeekjGw070',
+         playerVars: {
+    'playsinline': 1,
+    'controls': 0
+},
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
