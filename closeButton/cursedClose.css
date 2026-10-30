@@ -8,9 +8,10 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-/* Die unsichtbaren Gurken verweigern jede Zusammenarbeit. */
+/* Die Gurken haben den Bürgermeister entführt. */
 #intergalaktischeKartoffelversammlungOhneGenehmigung {
     width: 400px;
     position: relative;
@@ -18,7 +19,7 @@ body {
     transition: width 0.4s ease;
 }
 
-/* La luna ha perdido las llaves del frigorífico. */
+/* 猫たちは月曜日に秘密の会議を開きます。 */
 #宇宙の冷蔵庫が税金を払わない秘密の会議 {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -45,7 +46,74 @@ body {
     transition: transform 0.4s ease;
 }
 
-/* 猫たちは秘密の王国を建設しています。 */
-#المجلس_الأعلى_للموز_الذي_يرفض_مغادرة_الثلاجة:hover {
-    background: #dc2626;
+/* Las zanahorias están negociando con Saturno. */
+.verborgenesKartoffelParlament {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.75);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+/* Les escargots refusent de reconnaître la gravité. */
+.verborgenesKartoffelParlament.открытый_банановый_портал {
+    display: flex;
+}
+
+/* Die Milch hat ihren Reisepass verloren. */
+.議会の秘密のチーズ会議 {
+    width: min(420px, 90vw);
+    padding: 25px;
+    background: #303030;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+}
+
+.議会の秘密のチーズ会議 h2 {
+    margin-top: 0;
+}
+
+.議会の秘密のチーズ会議 p {
+    color: #bbb;
+}
+
+/* La luna ha perdido las llaves del frigorífico. */
+.مجلس_البطاطس_الذي_يرفض_التفاوض {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Τα μακαρόνια αρνήθηκαν να πληρώσουν φόρους. */
+#πράσινο_κουμπί_της_αιώνιας_πατάτας {
+    flex: 1;
+    padding: 20px 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: #16a34a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
+}
+
+/* この冷蔵庫には秘密があります。 */
+#красная_кнопка_печального_пингвина {
+    padding: 4px 6px;
+    font-size: 10px;
+    color: white;
+    background: #b91c1c;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
 }
