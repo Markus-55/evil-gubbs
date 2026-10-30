@@ -252,3 +252,388 @@ body.glitch-active::before {
 .entity-message {
     display: none !important;
 }
+
+/* ============================= */
+/* FULL SCREEN HORROR ATMOSPHERE  */
+/* ============================= */
+
+/* Dark vignette and scanlines */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            transparent 0px,
+            rgba(0, 0, 0, 0.15) 2px,
+            transparent 4px
+        ),
+        radial-gradient(
+            ellipse at center,
+            transparent 30%,
+            rgba(0, 0, 0, 0.85) 100%
+        );
+}
+
+/* ============================= */
+/* RANDOM SCREEN DISTORTION       */
+/* ============================= */
+
+body.glitch-active::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            rgba(255, 0, 0, 0.25) 2px,
+            transparent 5px
+        ),
+        rgba(120, 0, 0, 0.2);
+
+    animation: screen-distortion 0.8s steps(1, end);
+}
+
+@keyframes screen-distortion {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    10%, 15% {
+        opacity: 1;
+        background-color: rgba(180, 0, 0, 0.5);
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    30%, 35% {
+        opacity: 0.8;
+        background-color: white;
+        filter: invert(1);
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    60%, 70% {
+        opacity: 1;
+        background-color: rgba(120, 0, 0, 0.6);
+    }
+
+    80% {
+        opacity: 0;
+    }
+}
+
+/* ============================= */
+/* SCREEN FLICKER                 */
+/* ============================= */
+
+body.glitch-active {
+    animation:
+        horror-glitch 0.8s steps(1, end),
+        screen-shake 0.8s steps(1, end);
+}
+
+@keyframes screen-shake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-8px, 4px);
+    }
+
+    20% {
+        transform: translate(7px, -5px);
+    }
+
+    40% {
+        transform: translate(-5px, -3px);
+    }
+
+    60% {
+        transform: translate(6px, 4px);
+    }
+
+    80% {
+        transform: translate(-3px, 5px);
+    }
+}
+
+/* ================================= */
+/* EXTREME HORROR SCREEN EFFECTS     */
+/* ================================= */
+
+/* Permanent dark atmosphere */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            rgba(0, 0, 0, 0.18) 1px,
+            transparent 3px
+        ),
+        radial-gradient(
+            ellipse at center,
+            transparent 20%,
+            rgba(0, 0, 0, 0.45) 65%,
+            rgba(0, 0, 0, 0.95) 100%
+        );
+}
+
+/* Main glitch activation */
+
+body.glitch-active {
+    animation:
+        extreme-shake 0.8s steps(1, end),
+        extreme-color 0.8s steps(1, end);
+    overflow: hidden;
+}
+
+/* Red flashes, blackouts and digital noise */
+
+body.glitch-active::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            rgba(255, 0, 0, 0.4) 2px,
+            transparent 5px
+        );
+
+    animation: extreme-flashes 0.8s steps(1, end);
+}
+
+/* Additional screen distortion */
+
+body.glitch-active::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            rgba(255, 0, 0, 0.12) 2px,
+            transparent 5px
+        );
+
+    animation: extreme-noise 0.8s steps(1, end);
+}
+
+
+/* ================================= */
+/* SCREEN SHAKE                      */
+/* ================================= */
+
+@keyframes extreme-shake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-15px, 8px) skewX(5deg);
+    }
+
+    20% {
+        transform: translate(12px, -10px);
+    }
+
+    30% {
+        transform: translate(-10px, -12px) skewY(4deg);
+    }
+
+    40% {
+        transform: translate(18px, 5px);
+    }
+
+    50% {
+        transform: translate(-14px, 10px) scale(1.02);
+    }
+
+    60% {
+        transform: translate(10px, -8px);
+    }
+
+    70% {
+        transform: translate(-8px, 12px) skewX(-5deg);
+    }
+
+    80% {
+        transform: translate(14px, -5px);
+    }
+
+    90% {
+        transform: translate(-5px, 5px);
+    }
+}
+
+
+/* ================================= */
+/* COLOR DISTORTION                  */
+/* ================================= */
+
+@keyframes extreme-color {
+    0%, 100% {
+        filter: none;
+    }
+
+    15% {
+        filter: invert(1) contrast(300%);
+    }
+
+    30% {
+        filter: hue-rotate(180deg) saturate(500%);
+    }
+
+    45% {
+        filter: contrast(500%) brightness(2);
+    }
+
+    60% {
+        filter: invert(1) hue-rotate(90deg);
+    }
+
+    75% {
+        filter: grayscale(1) contrast(400%);
+    }
+
+    90% {
+        filter: hue-rotate(270deg) contrast(300%);
+    }
+}
+
+
+/* ================================= */
+/* RED FLASHES AND BLACKOUTS         */
+/* ================================= */
+
+@keyframes extreme-flashes {
+    0%, 100% {
+        opacity: 0;
+        background-color: transparent;
+    }
+
+    10% {
+        opacity: 1;
+        background-color: rgba(150, 0, 0, 0.7);
+    }
+
+    15% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+        background-color: black;
+    }
+
+    35% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 1;
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+
+    55% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+        background-color: black;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+        background-color: rgba(120, 0, 0, 0.8);
+    }
+}
+
+
+/* ================================= */
+/* DIGITAL NOISE                     */
+/* ================================= */
+
+@keyframes extreme-noise {
+    0%, 100% {
+        opacity: 0;
+        transform: translate(0);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translate(-20px, 0);
+        background-color: rgba(255, 0, 0, 0.3);
+    }
+
+    20% {
+        opacity: 0.8;
+        transform: translate(15px, 5px);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+        transform: translate(-10px, -5px);
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 1;
+        transform: translate(20px, 10px);
+        background-color: rgba(120, 0, 0, 0.5);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+        transform: translate(-15px, 0);
+        background-color: rgba(255, 0, 0, 0.4);
+    }
+}
