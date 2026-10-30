@@ -89,6 +89,8 @@ function setupGame() {
 
   cta.addEventListener("click", (event) => {
     event.preventDefault();
+    // The game's trigger comes too long after any input to go fullscreen then, so do it here
+    document.documentElement.requestFullscreen().catch(() => {});
     frame.src = cta.href;
     layer.hidden = false;
     frame.focus();
