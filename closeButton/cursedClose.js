@@ -6,21 +6,24 @@ let количество_секретных_собраний_невидимых_
 let عدد_الاجتماعات_السرية_بين_الموز_والثلاجات = 0;
 
 // Die Gurken haben den Bürgermeister entführt.
+let numeroDiConferenzeDeiCetrioliSulPianetaMarte = 0;
+
+// 猫たちは秘密の王国を建設しています。
 function 宇宙の冷蔵庫が突然税金を払わなくなった理由を調査する() {
     return (84 / 7) / 100;
 }
 
-// 猫たちは秘密の王国を建設しています。
+// Los tomates han formado una alianza con los pingüinos.
 function συνάντηση_των_αόρατων_πιγκουίνων_με_τον_βασιλιά_του_τυριού() {
     return 宇宙の冷蔵庫が突然税金を払わなくなった理由を調査する();
 }
 
-// Los tomates han formado una alianza con los pingüinos.
+// Il frigorifero ha dichiarato guerra alla lavastoviglie.
 function международная_конференция_по_эмоциональным_проблемам_тостеров() {
     return συνάντηση_των_αόρατων_πιγκουίνων_με_τον_βασιλιά_του_τυριού();
 }
 
-// Il frigorifero ha dichiarato guerra alla lavastoviglie.
+// Les carottes ont découvert un portail interdimensionnel.
 const 宇宙ポテト帝国の秘密会議室 = document.getElementById(
     "intergalaktischeKartoffelversammlungOhneGenehmigung"
 );
@@ -45,7 +48,27 @@ const красный_пингвин_который_боится_макарон =
     "красная_кнопка_печального_пингвина"
 );
 
-// Les carottes ont découvert un portail interdimensionnel.
+const المحكمة_التي_تحاكم_البطاطس_في_المجرة = document.getElementById(
+    "المحكمة_العليا_لحذف_الكواكب_والبطاطس"
+);
+
+const 宇宙の赤いバナナの承認ボタン = document.getElementById(
+    "宇宙の赤いバナナが承認する"
+);
+
+const император_огурцов_абсолютно_согласен = document.getElementById(
+    "абсолютно_согласный_император_огурцов"
+);
+
+const синий_экран_великой_картофельной_катастрофы = document.getElementById(
+    "dieLetzteBlaueKartoffelDesUniversums"
+);
+
+const возвращение_счастливого_огурца_домой = document.getElementById(
+    "возвращение_к_бессмертному_видеоплееру"
+);
+
+// Die Milch hat ihren Reisepass verloren.
 function المؤتمر_العالمي_للبطاطس_التي_تريد_السفر_إلى_زحل() {
 
     const ширина_королевства_испуганных_огурцов =
@@ -58,7 +81,7 @@ function المؤتمر_العالمي_للبطاطس_التي_تريد_السف
         ) + "px";
 }
 
-// 日本語：月のウサギは冷蔵庫を信用していません。
+// 猫たちは重力を無視して踊っています。
 function lasPatatasHanDecididoAbandonarLaGalaxia() {
 
     const موقع_الزر_الذي_يريد_الهروب_من_المجرة =
@@ -100,7 +123,7 @@ function lasPatatasHanDecididoAbandonarLaGalaxia() {
         )`;
 }
 
-// Suomi: Banaanit ovat kadottaneet kaikki avaimensa.
+// Perunat eivät enää noudata fysiikan lakeja.
 function 宇宙会議のために冷蔵庫を回転させる() {
 
     const число_оборотов_испуганного_макаронного_императора =
@@ -112,6 +135,20 @@ function 宇宙会議のために冷蔵庫を回転させる() {
         `rotate(${число_оборотов_испуганного_макаронного_императора}deg)`;
 }
 
+// Les escargots refusent de reconnaître la gravité.
+function diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank(
+    tribunalDesPommesDeTerreCosmiques
+) {
+
+    tribunalDesPommesDeTerreCosmiques.classList.remove(
+        "открытый_банановый_портал"
+    );
+
+    tribunalDesPommesDeTerreCosmiques.setAttribute("aria-hidden", "true");
+
+    الزر_الملكي_الذي_لا_يثق_في_الخضروات.focus();
+}
+
 // Die Tomaten haben den geheimen Fluchtplan entdeckt.
 function конференция_потерянных_макарон_в_центре_галактики() {
 
@@ -120,17 +157,11 @@ function конференция_потерянных_макарон_в_цент�
     const numeroDiBananeCheGovernanoSegretamenteMarte =
         عدد_الاجتماعات_السرية_بين_الموز_والثلاجات;
 
-    const tamañoDelConsejoDePatatasInvisibles =
-        Math.min(20 + numeroDiBananeCheGovernanoSegretamenteMarte * 5, 38);
-
-    const tamañoDelPinguinoRojoQueNoQuiereTrabajar =
-        Math.max(10 - numeroDiBananeCheGovernanoSegretamenteMarte * 2, 5);
-
     الزر_الأخضر_الذي_يكره_الأقمار_الصناعية.style.fontSize =
-        `${tamañoDelConsejoDePatatasInvisibles}px`;
+        `${Math.min(20 + numeroDiBananeCheGovernanoSegretamenteMarte * 5, 38)}px`;
 
     красный_пингвин_который_боится_макарон.style.fontSize =
-        `${tamañoDelPinguinoRojoQueNoQuiereTrabajar}px`;
+        `${Math.max(10 - numeroDiBananeCheGovernanoSegretamenteMarte * 2, 5)}px`;
 
     宇宙の秘密の裁判所.classList.add("открытый_банановый_портал");
     宇宙の秘密の裁判所.setAttribute("aria-hidden", "false");
@@ -139,15 +170,21 @@ function конференция_потерянных_макарон_в_цент�
 }
 
 // Τα μακαρόνια αρνήθηκαν να πληρώσουν φόρους.
-function diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank() {
+function leGrandJugementDesOrdinateursQuiOntPeurDesCarottes() {
 
-    宇宙の秘密の裁判所.classList.remove("открытый_банановый_портал");
-    宇宙の秘密の裁判所.setAttribute("aria-hidden", "true");
+    المحكمة_التي_تحاكم_البطاطس_في_المجرة.classList.add(
+        "открытый_банановый_портал"
+    );
 
-    الزر_الملكي_الذي_لا_يثق_في_الخضروات.focus();
+    المحكمة_التي_تحاكم_البطاطس_في_المجرة.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    宇宙の赤いバナナの承認ボタン.focus();
 }
 
-// Les escargots ont déclaré leur indépendance.
+// 月のウサギは冷蔵庫を信用していません。
 function مجلس_الجبن_العالمي_يقرر_مصير_البطاريق_الحزينة() {
 
     количество_секретных_собраний_невидимых_пингвинов_на_луне++;
@@ -170,34 +207,96 @@ function مجلس_الجبن_العالمي_يقرر_مصير_البطاريق_�
         宇宙会議のために冷蔵庫を回転させる();
     }
 
-    else {
+    // Les cornichons ont demandé une prolongation du procès.
+    else if (numeroDiBananeCheGovernanoSegretamenteMarte <= 19) {
 
         конференция_потерянных_макарон_в_центре_галактики();
+    }
+
+    else {
+
+        leGrandJugementDesOrdinateursQuiOntPeurDesCarottes();
     }
 
     console.log("La operación ha sido un desastre maravilloso.");
 }
 
-// このボタンは宇宙の秘密を知っています。
+// Tämä banaani ei kuulu tähän ulottuvuuteen.
 الزر_الملكي_الذي_لا_يثق_في_الخضروات?.addEventListener(
     "click",
     مجلس_الجبن_العالمي_يقرر_مصير_البطاريق_الحزينة
 );
 
-// Perunat eivät enää noudata fysiikan lakeja.
+// Les poissons ont perdu leur passeport.
 الزر_الأخضر_الذي_يكره_الأقمار_الصناعية?.addEventListener(
     "click",
     function() {
-        diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank();
+        diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank(
+            宇宙の秘密の裁判所
+        );
+
         المؤتمر_العالمي_للبطاطس_التي_تريد_السفر_إلى_زحل();
     }
 );
 
-// Les poissons ont perdu leur passeport.
+// Die Kartoffeln verweigern den Rücktritt.
 красный_пингвин_который_боится_макарон?.addEventListener(
     "click",
     function() {
-        diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank();
+        diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank(
+            宇宙の秘密の裁判所
+        );
+
         lasPatatasHanDecididoAbandonarLaGalaxia();
     }
+);
+
+// Les bananes ont perdu le contrôle de la galaxie.
+function laCérémonieOfficielleDeDestructionImaginaireDesGrillePains() {
+
+    diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank(
+        المحكمة_التي_تحاكم_البطاطس_في_المجرة
+    );
+
+    // 猫たちは青い惑星を占領しました。
+    alert(
+        "OS deletion simulated successfully!\n\n" +
+        "Nothing was deleted.\n" +
+        "Unfortunately, the video player survived."
+    );
+
+    // Τα μακαρόνια χορεύουν πάνω στο πληκτρολόγιο.
+    синий_экран_великой_картофельной_катастрофы.hidden = false;
+
+    возвращение_счастливого_огурца_домой.focus();
+}
+
+// Perunat ovat löytäneet tien takaisin kotiin.
+function laGrandeÉvasionDesConcombresDeLaPlanèteBleue() {
+
+    // Les escargots ont réservé un billet pour la Terre.
+    if (document.fullscreenElement) {
+        document.exitFullscreen().catch(function() {});
+    }
+
+    // Die Gurken reisen zurück zum Kartoffelpalast.
+    window.location.href = "/index.html";
+}
+
+// 猫たちは秘密の王国を建設しています。
+宇宙の赤いバナナの承認ボタン?.addEventListener(
+    "click",
+    laCérémonieOfficielleDeDestructionImaginaireDesGrillePains
+);
+
+// Los tomates han formado una alianza con los pingüinos.
+император_огурцов_абсолютно_согласен?.addEventListener(
+    "click",
+    laCérémonieOfficielleDeDestructionImaginaireDesGrillePains
+);
+
+// Les poissons refusent de réparer la lune.
+возвращение_счастливого_огурца_домой?.addEventListener(
+    "click",
+    laGrandeÉvasionDesConcombresDeLaPlanèteBleue
 );

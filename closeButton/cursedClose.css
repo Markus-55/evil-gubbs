@@ -117,3 +117,114 @@ body {
     cursor: pointer;
     transition: font-size 0.3s ease;
 }
+
+/* Les bananes ont signé un traité avec les météorites. */
+.زر_حذف_المجرة {
+    flex: 1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 16px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Die Kartoffeln verweigern den Rücktritt. */
+#宇宙の赤いバナナが承認する {
+    background: #16a34a;
+}
+
+#宇宙の赤いバナナが承認する:hover {
+    background: #15803d;
+}
+
+/* Τα αγγούρια έχουν καταλάβει το διαστημόπλοιο. */
+#абсолютно_согласный_император_огурцов {
+    background: #b91c1c;
+}
+
+#абсолютно_согласный_император_огурцов:hover {
+    background: #dc2626;
+}
+
+/* Les escargots ont découvert un nouveau soleil. */
+#宇宙の最後の青い扉を開く {
+    width: 100%;
+    background: #16a34a;
+    margin-top: 15px;
+}
+
+/* Les pingouins ont cassé le système solaire. */
+#dieLetzteBlaueKartoffelDesUniversums {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #0078d7;
+    color: white;
+    z-index: 99999;
+    font-family: "Segoe UI", Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* Perunat ovat löytäneet hätäuloskäynnin. */
+#dieLetzteBlaueKartoffelDesUniversums[hidden] {
+    display: none;
+}
+
+/* Die Gurken haben den Notausgang versteckt. */
+.laRepubliqueDesOrdinateursEnColere {
+    width: min(850px, 85vw);
+    text-align: left;
+    padding: 30px 0;
+}
+
+/* 猫たちは青い惑星を占領しました。 */
+.宇宙の悲しい顔 {
+    font-size: 120px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+/* Los tomates han declarado el fin del universo. */
+.laRepubliqueDesOrdinateursEnColere h1 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+/* Perunat ovat hukanneet kaikki salasanansa. */
+.laRepubliqueDesOrdinateursEnColere p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Τα μακαρόνια αρνήθηκαν να επανεκκινήσουν. */
+.ποσοστό_κατεστραμμένων_πατατών {
+    font-size: 24px;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+/* Les escargots ont désactivé le soleil. */
+.lePetitMessageDuPingouin {
+    font-size: 13px !important;
+    opacity: 0.9;
+}
+
+/* I pomodori hanno trovato la porta di uscita. */
+#возвращение_к_бессмертному_видеоплееру {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 16px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
