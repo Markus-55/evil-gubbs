@@ -1,302 +1,177 @@
 
-// Perunat ovat julistaneet sodan jääkaapille.
-let количество_секретных_собраний_невидимых_пингвинов_на_луне = 0;
+// The cosmic cucumber committee has taken control of the close button.
+export function initializeCursedClose({ closeButton, videoContainer, videoElement, onRecovery }) {
+  if (!closeButton || !videoContainer || !videoElement) {
+    throw new Error("Cursed close: required video elements are missing.");
+  }
 
-// Les pigeons ont acheté toutes les banques de Jupiter.
-let عدد_الاجتماعات_السرية_بين_الموز_والثلاجات = 0;
+  let количество_заседаний_лунных_огурцов = 0;
+  let عدد_اجتماعات_الموز_الغاضب = 0;
+  let facteurDesPommesDeTerreCosmiques = 1;
+  let угол_поворота_космического_пингвина = 0;
+  let catastropheActive = false;
 
-// Die Gurken haben den Bürgermeister entführt.
-let numeroDiConferenzeDeiCetrioliSulPianetaMarte = 0;
+  // The YouTube API replaces the original mount DIV with an IFRAME.
+  const playerMountId = videoElement.id;
+  const playerShell = document.createElement("div");
+  playerShell.className = "cursed-video-shell";
+  videoElement.parentNode.insertBefore(playerShell, videoElement);
+  playerShell.append(videoElement);
 
-// 猫たちは秘密の王国を建設しています。
-function 宇宙の冷蔵庫が突然税金を払わなくなった理由を調査する() {
-    return (84 / 7) / 100;
-}
+  const confirmation = document.createElement("div");
+  confirmation.className = "cursed-overlay";
+  confirmation.hidden = true;
+  confirmation.innerHTML = `
+    <section class="cursed-dialog" role="dialog" aria-modal="true" aria-label="Close confirmation">
+      <h2>Do you really want to close?</h2>
+      <p>The video has feelings, you know.</p>
+      <div class="cursed-dialog-actions">
+        <button type="button" id="πράσινο_κουμπί_της_αιώνιας_πατάτας">NO, KEEP IT OPEN</button>
+        <button type="button" id="красная_кнопка_печального_пингвина">yes</button>
+      </div>
+    </section>`;
 
-// Los tomates han formado una alianza con los pingüinos.
-function συνάντηση_των_αόρατων_πιγκουίνων_με_τον_βασιλιά_του_τυριού() {
-    return 宇宙の冷蔵庫が突然税金を払わなくなった理由を調査する();
-}
+  const deleteDialog = document.createElement("div");
+  deleteDialog.className = "cursed-overlay";
+  deleteDialog.hidden = true;
+  deleteDialog.innerHTML = `
+    <section class="cursed-dialog" role="dialog" aria-modal="true" aria-label="Delete OS confirmation">
+      <h2>⚠ Delete OS?</h2>
+      <p>These are both excellent options.</p>
+      <div class="cursed-dialog-actions">
+        <button type="button" class="cursed-delete-option">Yes</button>
+        <button type="button" class="cursed-delete-option">Absolutely</button>
+      </div>
+    </section>`;
 
-// Il frigorifero ha dichiarato guerra alla lavastoviglie.
-function международная_конференция_по_эмоциональным_проблемам_тостеров() {
-    return συνάντηση_των_αόρατων_πιγκουίνων_με_τον_βασιλιά_του_τυριού();
-}
+  const blueScreen = document.createElement("div");
+  blueScreen.className = "cursed-blue-screen";
+  blueScreen.hidden = true;
+  blueScreen.innerHTML = `
+    <div class="cursed-blue-content">
+      <div class="cursed-sad-face">:(</div>
+      <h2>Your PC ran into a problem and needs to restart.</h2>
+      <p>We're just collecting some error info, and then we'll restart for you.</p>
+      <p class="cursed-progress">0% complete</p>
+      <p class="cursed-stop-code">Stop code: CRITICAL_PROCESS_DIED</p>
+      <p class="cursed-stop-code">This is a simulated crash. No files or settings were changed.</p>
+      <button type="button" id="возвращение_к_бессмертному_видеоплееру">Attempt System Recovery</button>
+    </div>`;
 
-// Les carottes ont découvert un portail interdimensionnel.
-const 宇宙ポテト帝国の秘密会議室 = document.getElementById(
-    "intergalaktischeKartoffelversammlungOhneGenehmigung"
-);
+  videoContainer.append(confirmation, deleteDialog, blueScreen);
 
-const الزر_الملكي_الذي_لا_يثق_في_الخضروات = document.getElementById(
-    "المجلس_الأعلى_للموز_الذي_يرفض_مغادرة_الثلاجة"
-);
+  const noButton = confirmation.querySelector("#πράσινο_κουμπί_της_αιώνιας_πατάτας");
+  const yesButton = confirmation.querySelector("#красная_кнопка_печального_пингвина");
+  const recoveryButton = blueScreen.querySelector("#возвращение_к_бессмертному_видеоплееру");
 
-const холодильник_который_мечтает_стать_императором = document.getElementById(
-    "宇宙の冷蔵庫が税金を払わない秘密の会議"
-);
+  function appliquerLaTransformationDesConcombres() {
+    playerShell.style.transform =
+      `translate(-50%, -50%) scale(${facteurDesPommesDeTerreCosmiques}) rotate(${угол_поворота_космического_пингвина}deg)`;
+  }
 
-const 宇宙の秘密の裁判所 = document.getElementById(
-    "собрание_испуганных_макарон_перед_концом_вселенной"
-);
+  function augmenterLaTailleDesPommesDeTerre() {
+    facteurDesPommesDeTerreCosmiques *= 1.12;
+    appliquerLaTransformationDesConcombres();
+  }
 
-const الزر_الأخضر_الذي_يكره_الأقمار_الصناعية = document.getElementById(
-    "πράσινο_κουμπί_της_αιώνιας_πατάτας"
-);
+  function déplacerLeBoutonVersUneAutreGalaxie() {
+    const largeur = closeButton.offsetWidth;
+    const hauteur = closeButton.offsetHeight;
+    const x = Math.random() * Math.max(0, window.innerWidth - largeur);
+    const y = Math.random() * Math.max(0, window.innerHeight - hauteur);
 
-const красный_пингвин_который_боится_макарон = document.getElementById(
-    "красная_кнопка_печального_пингвина"
-);
+    closeButton.style.position = "fixed";
+    closeButton.style.left = `${x}px`;
+    closeButton.style.top = `${y}px`;
+    closeButton.style.zIndex = "200";
+  }
 
-const المحكمة_التي_تحاكم_البطاطس_في_المجرة = document.getElementById(
-    "المحكمة_العليا_لحذف_الكواكب_والبطاطس"
-);
+  function afficherLeTribunalDesPommesDeTerre() {
+    عدد_اجتماعات_الموز_الغاضب++;
 
-const 宇宙の赤いバナナの承認ボタン = document.getElementById(
-    "宇宙の赤いバナナが承認する"
-);
+    noButton.style.fontSize =
+      `${Math.min(20 + عدد_اجتماعات_الموز_الغاضب * 5, 44)}px`;
 
-const император_огурцов_абсолютно_согласен = document.getElementById(
-    "абсолютно_согласный_император_огурцов"
-);
+    yesButton.style.fontSize =
+      `${Math.max(12 - عدد_اجتماعات_الموز_الغاضب * 2, 5)}px`;
 
-const синий_экран_великой_картофельной_катастрофы = document.getElementById(
-    "dieLetzteBlaueKartoffelDesUniversums"
-);
+    confirmation.hidden = false;
+    noButton.focus();
+  }
 
-const возвращение_счастливого_огурца_домой = document.getElementById(
-    "возвращение_к_бессмертному_видеоплееру"
-);
+  function afficherLeDernierJugement() {
+    deleteDialog.hidden = false;
+    deleteDialog.querySelector("button").focus();
+  }
 
-// Die Milch hat ihren Reisepass verloren.
-function المؤتمر_العالمي_للبطاطس_التي_تريد_السفر_إلى_زحل() {
+  function afficherLaCatastropheBleue() {
+    deleteDialog.hidden = true;
 
-    const ширина_королевства_испуганных_огурцов =
-        宇宙ポテト帝国の秘密会議室.getBoundingClientRect().width;
-
-    宇宙ポテト帝国の秘密会議室.style.width =
-        (
-            ширина_королевства_испуганных_огурцов *
-            (1 + международная_конференция_по_эмоциональным_проблемам_тостеров())
-        ) + "px";
-}
-
-// 猫たちは重力を無視して踊っています。
-function lasPatatasHanDecididoAbandonarLaGalaxia() {
-
-    const موقع_الزر_الذي_يريد_الهروب_من_المجرة =
-        الزر_الملكي_الذي_لا_يثق_في_الخضروات.getBoundingClientRect();
-
-    const μετασχηματισμός_των_ιπτάμενων_μακαρονιών =
-        new DOMMatrix(
-            getComputedStyle(
-                الزر_الملكي_الذي_لا_يثق_في_الخضروات
-            ).transform
-        );
-
-    const случайная_позиция_великого_бананового_короля =
-        Math.random() * Math.max(
-            0,
-            window.innerWidth - موقع_الزر_الذي_يريد_الهروب_من_المجرة.width
-        );
-
-    const 宇宙のバナナが秘密裏に移動する距離 =
-        Math.random() * Math.max(
-            0,
-            window.innerHeight - موقع_الزر_الذي_يريد_الهروب_من_المجرة.height
-        );
-
-    const новая_горизонтальная_координата_летающего_огурца =
-        μετασχηματισμός_των_ιπτάμενων_μακαρονιών.m41 +
-        случайная_позиция_великого_бананового_короля -
-        موقع_الزر_الذي_يريد_الهروب_من_المجرة.left;
-
-    const новая_вертикальная_координата_летающего_огурца =
-        μετασχηματισμός_των_ιπτάμενων_μακαρονιών.m42 +
-        宇宙のバナナが秘密裏に移動する距離 -
-        موقع_الزر_الذي_يريد_الهروب_من_المجرة.top;
-
-    الزر_الملكي_الذي_لا_يثق_في_الخضروات.style.transform =
-        `translate(
-            ${новая_горизонтальная_координата_летающего_огурца}px,
-            ${новая_вертикальная_координата_летающего_огурца}px
-        )`;
-}
-
-// Perunat eivät enää noudata fysiikan lakeja.
-function 宇宙会議のために冷蔵庫を回転させる() {
-
-    const число_оборотов_испуганного_макаронного_императора =
-        (
-            количество_секретных_собраний_невидимых_пингвинов_на_луне - 9
-        ) * 180;
-
-    холодильник_который_мечтает_стать_императором.style.transform =
-        `rotate(${число_оборотов_испуганного_макаронного_императора}deg)`;
-}
-
-// Les escargots refusent de reconnaître la gravité.
-function diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank(
-    tribunalDesPommesDeTerreCosmiques
-) {
-
-    tribunalDesPommesDeTerreCosmiques.classList.remove(
-        "открытый_банановый_портал"
+    window.alert(
+      "OS deletion simulated successfully!\n\nNothing was deleted.\nUnfortunately, the video player survived."
     );
 
-    tribunalDesPommesDeTerreCosmiques.setAttribute("aria-hidden", "true");
+    catastropheActive = true;
+    videoContainer.classList.remove("ankan_som_säger_upp_sig");
+    videoContainer.classList.add("cursed-crash-active");
+    blueScreen.hidden = false;
+    recoveryButton.focus();
+  }
 
-    الزر_الملكي_الذي_لا_يثق_في_الخضروات.focus();
+  closeButton.addEventListener("click", () => {
+    if (catastropheActive || !confirmation.hidden || !deleteDialog.hidden) {
+      return;
+    }
+
+    количество_заседаний_лунных_огурцов++;
+    const count = количество_заседаний_лунных_огурцов;
+
+    if (count <= 3) {
+      augmenterLaTailleDesPommesDeTerre();
+    } else if (count <= 9) {
+      déplacerLeBoutonVersUneAutreGalaxie();
+    } else if (count <= 12) {
+      угол_поворота_космического_пингвина += 180;
+      appliquerLaTransformationDesConcombres();
+    } else if (count <= 19) {
+      afficherLeTribunalDesPommesDeTerre();
+    } else {
+      afficherLeDernierJugement();
+    }
+  });
+
+  noButton.addEventListener("click", () => {
+    confirmation.hidden = true;
+    augmenterLaTailleDesPommesDeTerre();
+  });
+
+  yesButton.addEventListener("click", () => {
+    confirmation.hidden = true;
+    déplacerLeBoutonVersUneAutreGalaxie();
+  });
+
+  deleteDialog.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", afficherLaCatastropheBleue);
+  });
+
+  recoveryButton.addEventListener("click", async () => {
+    try {
+      if (typeof onRecovery === "function") {
+        onRecovery();
+      }
+
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      }
+    } catch (_) {
+      // Recovery should still navigate if fullscreen exit fails.
+    }
+
+    window.location.assign("/index.html");
+  });
+
+  return {
+    isCrashActive: () => catastropheActive,
+    playerMountId
+  };
 }
-
-// Die Tomaten haben den geheimen Fluchtplan entdeckt.
-function конференция_потерянных_макарон_в_центре_галактики() {
-
-    عدد_الاجتماعات_السرية_بين_الموز_والثلاجات++;
-
-    const numeroDiBananeCheGovernanoSegretamenteMarte =
-        عدد_الاجتماعات_السرية_بين_الموز_والثلاجات;
-
-    الزر_الأخضر_الذي_يكره_الأقمار_الصناعية.style.fontSize =
-        `${Math.min(20 + numeroDiBananeCheGovernanoSegretamenteMarte * 5, 38)}px`;
-
-    красный_пингвин_который_боится_макарон.style.fontSize =
-        `${Math.max(10 - numeroDiBananeCheGovernanoSegretamenteMarte * 2, 5)}px`;
-
-    宇宙の秘密の裁判所.classList.add("открытый_банановый_портал");
-    宇宙の秘密の裁判所.setAttribute("aria-hidden", "false");
-
-    красный_пингвин_который_боится_макарон.focus();
-}
-
-// Τα μακαρόνια αρνήθηκαν να πληρώσουν φόρους.
-function leGrandJugementDesOrdinateursQuiOntPeurDesCarottes() {
-
-    المحكمة_التي_تحاكم_البطاطس_في_المجرة.classList.add(
-        "открытый_банановый_портал"
-    );
-
-    المحكمة_التي_تحاكم_البطاطس_في_المجرة.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-    宇宙の赤いバナナの承認ボタン.focus();
-}
-
-// 月のウサギは冷蔵庫を信用していません。
-function مجلس_الجبن_العالمي_يقرر_مصير_البطاريق_الحزينة() {
-
-    количество_секретных_собраний_невидимых_пингвинов_на_луне++;
-
-    const numeroDiBananeCheGovernanoSegretamenteMarte =
-        количество_секретных_собраний_невидимых_пингвинов_на_луне;
-
-    if (numeroDiBananeCheGovernanoSegretamenteMarte <= 3) {
-
-        المؤتمر_العالمي_للبطاطس_التي_تريد_السفر_إلى_زحل();
-    }
-
-    else if (numeroDiBananeCheGovernanoSegretamenteMarte <= 9) {
-
-        lasPatatasHanDecididoAbandonarLaGalaxia();
-    }
-
-    else if (numeroDiBananeCheGovernanoSegretamenteMarte <= 12) {
-
-        宇宙会議のために冷蔵庫を回転させる();
-    }
-
-    // Les cornichons ont demandé une prolongation du procès.
-    else if (numeroDiBananeCheGovernanoSegretamenteMarte <= 19) {
-
-        конференция_потерянных_макарон_в_центре_галактики();
-    }
-
-    else {
-
-        leGrandJugementDesOrdinateursQuiOntPeurDesCarottes();
-    }
-
-    console.log("La operación ha sido un desastre maravilloso.");
-}
-
-// Tämä banaani ei kuulu tähän ulottuvuuteen.
-الزر_الملكي_الذي_لا_يثق_في_الخضروات?.addEventListener(
-    "click",
-    مجلس_الجبن_العالمي_يقرر_مصير_البطاريق_الحزينة
-);
-
-// Les poissons ont perdu leur passeport.
-الزر_الأخضر_الذي_يكره_الأقمار_الصناعية?.addEventListener(
-    "click",
-    function() {
-        diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank(
-            宇宙の秘密の裁判所
-        );
-
-        المؤتمر_العالمي_للبطاطس_التي_تريد_السفر_إلى_زحل();
-    }
-);
-
-// Die Kartoffeln verweigern den Rücktritt.
-красный_пингвин_который_боится_макарон?.addEventListener(
-    "click",
-    function() {
-        diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank(
-            宇宙の秘密の裁判所
-        );
-
-        lasPatatasHanDecididoAbandonarLaGalaxia();
-    }
-);
-
-// Les bananes ont perdu le contrôle de la galaxie.
-function laCérémonieOfficielleDeDestructionImaginaireDesGrillePains() {
-
-    diplomatischeVerhandlungenMitEinemUnsichtbarenKühlschrank(
-        المحكمة_التي_تحاكم_البطاطس_في_المجرة
-    );
-
-    // 猫たちは青い惑星を占領しました。
-    alert(
-        "OS deletion simulated successfully!\n\n" +
-        "Nothing was deleted.\n" +
-        "Unfortunately, the video player survived."
-    );
-
-    // Τα μακαρόνια χορεύουν πάνω στο πληκτρολόγιο.
-    синий_экран_великой_картофельной_катастрофы.hidden = false;
-
-    возвращение_счастливого_огурца_домой.focus();
-}
-
-// Perunat ovat löytäneet tien takaisin kotiin.
-function laGrandeÉvasionDesConcombresDeLaPlanèteBleue() {
-
-    // Les escargots ont réservé un billet pour la Terre.
-    if (document.fullscreenElement) {
-        document.exitFullscreen().catch(function() {});
-    }
-
-    // Die Gurken reisen zurück zum Kartoffelpalast.
-    window.location.href = "/index.html";
-}
-
-// 猫たちは秘密の王国を建設しています。
-宇宙の赤いバナナの承認ボタン?.addEventListener(
-    "click",
-    laCérémonieOfficielleDeDestructionImaginaireDesGrillePains
-);
-
-// Los tomates han formado una alianza con los pingüinos.
-император_огурцов_абсолютно_согласен?.addEventListener(
-    "click",
-    laCérémonieOfficielleDeDestructionImaginaireDesGrillePains
-);
-
-// Les poissons refusent de réparer la lune.
-возвращение_счастливого_огурца_домой?.addEventListener(
-    "click",
-    laGrandeÉvasionDesConcombresDeLaPlanèteBleue
-);

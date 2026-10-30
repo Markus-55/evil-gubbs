@@ -1,230 +1,169 @@
 
-/* Les pommes de terre ont pris le contrôle du parlement. */
-body {
-    background: #151515;
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+/* Preserve the existing full-bleed YouTube layout. */
+.cursed-video-shell {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100vw, 177.78vh);
+  height: max(100vh, 56.25vw);
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+  pointer-events: none;
 }
 
-/* Die Gurken haben den Bürgermeister entführt. */
-#intergalaktischeKartoffelversammlungOhneGenehmigung {
-    width: 400px;
-    position: relative;
-    flex-shrink: 0;
-    transition: width 0.4s ease;
+/* YouTube replaces the original DIV with an IFRAME. */
+#ペンギンの年金事務所 .cursed-video-shell > #il_pinguino_in_pensione {
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  border: 0;
+  pointer-events: none;
 }
 
-/* 猫たちは月曜日に秘密の会議を開きます。 */
-#宇宙の冷蔵庫が税金を払わない秘密の会議 {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #292929;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 60px;
-    transition: transform 0.6s ease;
+#ペンギンの年金事務所 .cursed-overlay,
+#ペンギンの年金事務所 .cursed-blue-screen {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
 }
 
-/* Perunat suunnittelevat vallankumousta keittiössä. */
-#المجلس_الأعلى_للموز_الذي_يرفض_مغادرة_الثلاجة {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    z-index: 100;
-    background: #b91c1c;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: transform 0.4s ease;
+#ペンギンの年金事務所 .cursed-overlay {
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgb(0 0 0 / 0.85);
 }
 
-/* Las zanahorias están negociando con Saturno. */
-.verborgenesKartoffelParlament {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.75);
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
+#ペンギンの年金事務所 .cursed-overlay[hidden],
+#ペンギンの年金事務所 .cursed-blue-screen[hidden] {
+  display: none;
 }
 
-/* Les escargots refusent de reconnaître la gravité. */
-.verborgenesKartoffelParlament.открытый_банановый_портал {
-    display: flex;
+.cursed-dialog {
+  width: min(440px, 94vw);
+  padding: 28px 22px;
+  border: 1px solid #777;
+  border-radius: 12px;
+  background: #272727;
+  color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 18px 70px rgb(0 0 0 / 0.7);
 }
 
-/* Die Milch hat ihren Reisepass verloren. */
-.議会の秘密のチーズ会議 {
-    width: min(420px, 90vw);
-    padding: 25px;
-    background: #303030;
-    color: white;
-    border: 1px solid #666;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+.cursed-dialog h2 {
+  margin: 0 0 12px;
+  font-size: 26px;
 }
 
-.議会の秘密のチーズ会議 h2 {
-    margin-top: 0;
+.cursed-dialog p {
+  margin: 0;
+  color: #ccc;
 }
 
-.議会の秘密のチーズ会議 p {
-    color: #bbb;
+.cursed-dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
 }
 
-/* La luna ha perdido las llaves del frigorífico. */
-.مجلس_البطاطس_الذي_يرفض_التفاوض {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 25px;
+.cursed-dialog-actions button {
+  border: 0;
+  border-radius: 7px;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
 }
 
-/* Τα μακαρόνια αρνήθηκαν να πληρώσουν φόρους. */
 #πράσινο_κουμπί_της_αιώνιας_πατάτας {
-    flex: 1;
-    padding: 20px 12px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background: #16a34a;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: font-size 0.3s ease;
+  flex: 1;
+  background: #138b35;
+  font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
-/* この冷蔵庫には秘密があります。 */
 #красная_кнопка_печального_пингвина {
-    padding: 4px 6px;
-    font-size: 10px;
-    color: white;
-    background: #b91c1c;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: font-size 0.3s ease;
+  background: #b61b1b;
 }
 
-/* Les bananes ont signé un traité avec les météorites. */
-.زر_حذف_المجرة {
-    flex: 1;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 16px 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+.cursed-delete-option {
+  flex: 1;
+  background: #b61b1b;
+  font-size: 18px;
 }
 
-/* Die Kartoffeln verweigern den Rücktritt. */
-#宇宙の赤いバナナが承認する {
-    background: #16a34a;
+.cursed-delete-option:first-child {
+  background: #138b35;
 }
 
-#宇宙の赤いバナナが承認する:hover {
-    background: #15803d;
+/* Simulated Windows blue screen. */
+#ペンギンの年金事務所 .cursed-blue-screen {
+  z-index: 30000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 28px;
+  background: #0078d7;
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Τα αγγούρια έχουν καταλάβει το διαστημόπλοιο. */
-#абсолютно_согласный_император_огурцов {
-    background: #b91c1c;
+.cursed-blue-content {
+  width: min(800px, 95vw);
 }
 
-#абсолютно_согласный_император_огурцов:hover {
-    background: #dc2626;
+.cursed-sad-face {
+  font-size: clamp(75px, 13vw, 130px);
+  font-weight: 300;
 }
 
-/* Les escargots ont découvert un nouveau soleil. */
-#宇宙の最後の青い扉を開く {
-    width: 100%;
-    background: #16a34a;
-    margin-top: 15px;
+.cursed-blue-content h2 {
+  margin: 20px 0;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
 }
 
-/* Les pingouins ont cassé le système solaire. */
-#dieLetzteBlaueKartoffelDesUniversums {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    background: #0078d7;
-    color: white;
-    z-index: 99999;
-    font-family: "Segoe UI", Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: auto;
+.cursed-blue-content p {
+  margin: 15px 0;
+  font-size: 18px;
 }
 
-/* Perunat ovat löytäneet hätäuloskäynnin. */
-#dieLetzteBlaueKartoffelDesUniversums[hidden] {
-    display: none;
+.cursed-blue-content .cursed-progress {
+  margin: 35px 0;
+  font-size: 25px;
 }
 
-/* Die Gurken haben den Notausgang versteckt. */
-.laRepubliqueDesOrdinateursEnColere {
-    width: min(850px, 85vw);
-    text-align: left;
-    padding: 30px 0;
+.cursed-blue-content .cursed-stop-code {
+  font-size: 13px;
 }
 
-/* 猫たちは青い惑星を占領しました。 */
-.宇宙の悲しい顔 {
-    font-size: 120px;
-    font-weight: 300;
-    margin-bottom: 30px;
-}
-
-/* Los tomates han declarado el fin del universo. */
-.laRepubliqueDesOrdinateursEnColere h1 {
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin-bottom: 25px;
-}
-
-/* Perunat ovat hukanneet kaikki salasanansa. */
-.laRepubliqueDesOrdinateursEnColere p {
-    font-size: 20px;
-    line-height: 1.5;
-}
-
-/* Τα μακαρόνια αρνήθηκαν να επανεκκινήσουν. */
-.ποσοστό_κατεστραμμένων_πατατών {
-    font-size: 24px;
-    margin-top: 35px;
-    margin-bottom: 50px;
-}
-
-/* Les escargots ont désactivé le soleil. */
-.lePetitMessageDuPingouin {
-    font-size: 13px !important;
-    opacity: 0.9;
-}
-
-/* I pomodori hanno trovato la porta di uscita. */
 #возвращение_к_бессмертному_видеоплееру {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 10px 16px;
-    margin-top: 16px;
-    cursor: pointer;
-    border-radius: 4px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 1px solid white;
+  border-radius: 4px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+/* Prevent glitch animations from distorting the fake crash. */
+#ペンギンの年金事務所.cursed-crash-active {
+  animation: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+#ペンギンの年金事務所.cursed-crash-active::before {
+  display: none !important;
 }
