@@ -84,3 +84,14 @@ What every cursed class, ID and animation name in `index.html`, `styles.css`, `s
 | `hw-blink` (animation) | `жираф_в_отпуске` | |
 | `hw-flicker` (animation) | `냉장고의_춤` | |
 | `hw-glow` (animation) | `केले_से_डरने_वाली_घड़ी` | |
+| fake control bar | `海を見たことがない掃除機` | vacuum cleaner that has never seen the sea |
+| fake control button | `пылесос_который_видел_море` | vacuum cleaner that has seen the sea |
+| pause button | `la_aspiradora_melancólica` | the melancholic vacuum cleaner |
+| time display | `saippuakauppias_ilman_saippuaa` | soap seller without soap |
+| progress bar | `tisztességes_porszívó` | honest vacuum cleaner |
+| progress bar fill | `정직한_청소기의_꼬리` | the honest vacuum cleaner's tail |
+| volume down button | `ο_τοστιέρας_που_λέει_ψέματα` | the toaster that tells lies |
+| volume up button | `الملعقة_التي_تكذب` | the spoon that lies |
+| volume readout | `der_lügende_Löffel` | the lying spoon |
+| mute button | `le_parapluie_timide` | the shy umbrella |
+| close button | `il_calzino_fuggitivo` | the fugitive sock |

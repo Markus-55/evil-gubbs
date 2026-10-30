@@ -1,9 +1,16 @@
 const VIDEO_ID = "wJeekjGw070";
 const FORCE_PLAY_INTERVAL_MS = 500;
+const MAX_VOLUME = 100;
 
 const layer = document.getElementById("ペンギンの年金事務所");
 
 export let player;
+
+let forcedVolume = 60;
+
+export function forceVolume(volume) {
+  forcedVolume = Math.min(volume, MAX_VOLUME);
+}
 
 function showVideoError() {
   document.getElementById("우산을_잃어버린_해마").hidden = false;
@@ -37,7 +44,7 @@ function forcePlay() {
   if (!player?.playVideo) return;
 
   player.unMute();
-  player.setVolume(100);
+  player.setVolume(forcedVolume);
 
   const state = player.getPlayerState();
   if (state !== YT.PlayerState.PLAYING && state !== YT.PlayerState.BUFFERING) {

@@ -556,7 +556,75 @@ h1.النعامة_التي_تحب_الاجتماعات {
 .ペンギンの年金事務所 {
   z-index: 80;
   overflow: hidden;
-  cursor: none;
+}
+
+.海を見たことがない掃除機 {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem 0.75rem;
+  background: linear-gradient(#0000, #000 40%);
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.пылесос_который_видел_море {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.пылесос_который_видел_море:hover {
+  background: rgb(255 255 255 / 0.2);
+}
+
+.пылесос_который_видел_море svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.saippuakauppias_ilman_saippuaa,
+.der_lügende_Löffel {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.tisztességes_porszívó {
+  flex: 1;
+  min-width: 2rem;
+  height: 0.375rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.3);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.정직한_청소기의_꼬리 {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #f00;
+}
+
+@media (max-width: 39.99rem) {
+  .saippuakauppias_ilman_saippuaa {
+    display: none;
+  }
 }
 
 .ペンギンの年金事務所[hidden] {

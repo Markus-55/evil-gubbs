@@ -57,18 +57,11 @@ The video plays from YouTube. To change it, edit `VIDEO_ID` at the top of `jumps
 
 ## Adding cursed control buttons
 
-The video currently has no controls at all. Do this once, before the first button:
+The video has a fake control bar, `.海を見たことがない掃除機`, with the logic in `cursed-controls.js`. Pause and the progress bar restart the video, both volume buttons make it louder, and mute and close run away from the mouse. The volume starts at 60% so there's room to raise it. The number on screen keeps climbing past 100%, but the real volume stops there.
 
-1. Delete `cursor: none;` from `.ペンギンの年金事務所` in `styles.css`. Otherwise nobody can see the mouse pointer.
-2. Create `cursed-controls.js` and add this line to the top of `script.js`:
+Each new button needs three things.
 
-   ```js
-   import "./cursed-controls.js";
-   ```
-
-Then each button needs three things.
-
-**Markup**, in `index.html`, inside `#ペンギンの年金事務所` and after the `우산을_잃어버린_해마` paragraph. If it comes earlier, the message covers it.
+**Markup**, in `index.html`, inside `#ペンギンの年金事務所` and after the `우산을_잃어버린_해마` paragraph. If it comes earlier, the message covers it. To put it in the bar, add it inside `.海を見たことがない掃除機` and use the class `пылесос_который_видел_море` instead of writing your own styles.
 
 ```html
 <button class="cursed-button" id="stop-button" type="button">Stäng av</button>
@@ -98,7 +91,7 @@ document.getElementById("stop-button").addEventListener("click", () => {
 
 These come from `jumpscare.js`:
 
-- **Pause and volume bounce back.** `player` is the [YouTube player](https://developers.google.com/youtube/iframe_api_reference), and `forcePlay` undoes any pause or volume change within half a second. A real volume slider won't work unless you change that, but a fake one is more evil anyway.
+- **Pause and volume bounce back.** `player` is the [YouTube player](https://developers.google.com/youtube/iframe_api_reference), and `forcePlay` undoes any pause or volume change within half a second. To change the volume, call `forceVolume` from `jumpscare.js`.
 - **Mouse only.** All keyboard input is blocked while the jumpscare runs, so `keydown` listeners on your buttons won't help.
 - **Right-clicks are blocked.** Use left clicks or hover (`pointerenter`).
 - **Clicks work normally.** Every click also forces the sound and fullscreen back on, so you don't have to.

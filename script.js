@@ -1,4 +1,5 @@
 import { startJumpscare } from "./jumpscare.js";
+import "./cursed-controls.js";
 
 // Seeded so the stars land in the same spots on every load
 function seededRandom(seed) {
