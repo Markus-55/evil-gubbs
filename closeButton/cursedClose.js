@@ -126,17 +126,15 @@ export function initializeCursedClose({ closeButton, videoContainer, videoElemen
     количество_заседаний_лунных_огурцов++;
     const count = количество_заседаний_лунных_огурцов;
 
-    if (count <= 3) {
-      augmenterLaTailleDesPommesDeTerre();
+    if (count <= 6) {
+  déplacerLeBoutonVersUneAutreGalaxie();
     } else if (count <= 9) {
-      déplacerLeBoutonVersUneAutreGalaxie();
-    } else if (count <= 12) {
-      угол_поворота_космического_пингвина += 180;
-      appliquerLaTransformationDesConcombres();
-    } else if (count <= 19) {
-      afficherLeTribunalDesPommesDeTerre();
+    угол_поворота_космического_пингвина += 180;
+    appliquerLaTransformationDesConcombres();
+    } else if (count <= 16) {
+    afficherLeTribunalDesPommesDeTerre();
     } else {
-      afficherLeDernierJugement();
+    afficherLeDernierJugement();
     }
   });
 
