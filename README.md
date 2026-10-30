@@ -17,11 +17,11 @@ Do your work on a branch off `chas-hack`, and pull often. Several of us will be 
 
 ## How it works
 
-1. The Anmäl button opens the [Lovable game](https://ghostly-trap-mansion.lovable.app/) in a full-screen iframe. The visitor never leaves our page.
-2. When the player clicks the trigger in the game, it runs `window.parent.postMessage("jumpscare", "*")`. The game is edited in Lovable, not in this repo.
-3. Our page receives that message and starts the video, with sound and fullscreen.
+1. The Anmäl button goes fullscreen and opens the [Lovable game](https://ghostly-trap-mansion.lovable.app/) in an iframe. The visitor never leaves our page.
+2. When the player dies, the game shows "YOU DIED" and 5 seconds later runs `window.parent.postMessage("jumpscare", "*")`. The game is edited in Lovable, not in this repo.
+3. Our page receives that message and starts the video with sound.
 
-We stay on one page because browsers only allow sound and fullscreen after a click on the same page. A click inside the iframe counts. If the game redirected to a separate page, the video would probably start silently.
+We stay on one page because browsers only allow sound after a click on the same page, and the Anmäl click counts. If the game redirected to a separate page, the video would probably start silently. Fullscreen starts at the Anmäl click because browsers refuse it unless there was a click or key press in the last few seconds.
 
 | File | What it does |
 |---|---|

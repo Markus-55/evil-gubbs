@@ -10,13 +10,12 @@ function forceSoundAndFullscreen() {
   video.volume = 1;
   forcePlay();
 
-  if (!document.fullscreenElement) {
-    document.documentElement
-      .requestFullscreen()
-      // Tapping Esc stays trapped, but holding it still exits fullscreen
-      .then(() => navigator.keyboard?.lock?.(["Escape"]))
-      .catch(() => {});
-  }
+  const fullscreen = document.fullscreenElement
+    ? Promise.resolve()
+    : document.documentElement.requestFullscreen();
+
+  // Tapping Esc stays trapped, but holding it still exits fullscreen
+  fullscreen.then(() => navigator.keyboard?.lock?.(["Escape"])).catch(() => {});
 }
 
 function blockEvent(event) {
