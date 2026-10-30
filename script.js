@@ -1,3 +1,5 @@
+import { startJumpscare } from "./jumpscare.js";
+
 // Seeded so the stars land in the same spots on every load
 function seededRandom(seed) {
   return () => {
@@ -79,6 +81,28 @@ function setupScreenshotToast() {
   });
 }
 
+function setupGame() {
+  const cta = document.getElementById("cta");
+  const layer = document.getElementById("game-layer");
+  const frame = document.getElementById("game-frame");
+  const gameOrigin = new URL(cta.href).origin;
+
+  cta.addEventListener("click", (event) => {
+    event.preventDefault();
+    frame.src = cta.href;
+    layer.hidden = false;
+    frame.focus();
+  });
+
+  // Sent by the game: window.parent.postMessage("jumpscare", "*")
+  window.addEventListener("message", (event) => {
+    if (event.origin !== gameOrigin || event.data !== "jumpscare") return;
+    startJumpscare();
+    layer.remove();
+  });
+}
+
 renderStars();
 setupNav();
 setupScreenshotToast();
+setupGame();

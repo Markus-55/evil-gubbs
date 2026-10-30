@@ -539,6 +539,48 @@ h1.hw-title {
   margin-top: 0.25rem;
 }
 
+/* Game and jumpscare overlays */
+
+.game-layer,
+.scare-layer {
+  position: fixed;
+  inset: 0;
+  background: #000;
+}
+
+.game-layer {
+  z-index: 70;
+}
+
+.scare-layer {
+  z-index: 80;
+  cursor: none;
+}
+
+.game-frame,
+.scare {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.scare {
+  object-fit: cover;
+}
+
+.missing-video {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missing-video[hidden] {
+  display: none;
+}
+
 /* Breakpoints match the original: 40rem, 48rem, 64rem */
 
 @media (min-width: 40rem) {
