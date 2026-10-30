@@ -1,0 +1,51 @@
+
+/* Les pommes de terre ont pris le contrôle du parlement. */
+body {
+    background: #151515;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Die unsichtbaren Gurken verweigern jede Zusammenarbeit. */
+#intergalaktischeKartoffelversammlungOhneGenehmigung {
+    width: 400px;
+    position: relative;
+    flex-shrink: 0;
+    transition: width 0.4s ease;
+}
+
+/* La luna ha perdido las llaves del frigorífico. */
+#宇宙の冷蔵庫が税金を払わない秘密の会議 {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #292929;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    transition: transform 0.6s ease;
+}
+
+/* Perunat suunnittelevat vallankumousta keittiössä. */
+#المجلس_الأعلى_للموز_الذي_يرفض_مغادرة_الثلاجة {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+    background: #b91c1c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+/* 猫たちは秘密の王国を建設しています。 */
+#المجلس_الأعلى_للموز_الذي_يرفض_مغادرة_الثلاجة:hover {
+    background: #dc2626;
+}
